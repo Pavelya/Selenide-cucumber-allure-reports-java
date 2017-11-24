@@ -20,13 +20,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import com.qa.tlv.environment.BaseTest;
-import com.qa.tlv.environment.ChromeDriverSetup;
 import com.qa.tlv.logger.Log;
 
 import cucumber.api.Scenario;
@@ -40,10 +38,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	private WebElement dropdown = null;
 	private Select selectList = null;
 
-	private WebDriver chrome;
-
-
-	static ChromeDriverSetup chromeDriverSetup = new ChromeDriverSetup();
+	private WebDriver driver;
 
 	////////////////////
 	// NAVIGATION METHODS
@@ -58,10 +53,10 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 
 	public void navigateTo(String url) {
 
-		System.setProperty("webdriver.chrome.driver", chromeDriverSetup.getChromeDriverPath());
-
-		chrome = new ChromeDriver();
-		WebDriverRunner.setWebDriver(chrome);
+		//load web driver by given browser type
+		systemPropertiesObj.setWebdriverSystemProperty();
+		driver = initBrowserObj.getDriverBySelectedBrowserType();
+		WebDriverRunner.setWebDriver(driver);
 
 		// get url from feature file
 		if (url.contains("http")) {
@@ -90,13 +85,13 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 		else
 			forward();
 	}
-	
+
 	/**
 	 * Method to refresh
 	 * 
 	 */
 	public void refresh() {
-			refresh();
+		refresh();
 	}
 
 	/** Method to quite webdriver instance */
@@ -320,7 +315,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	 * @return String
 	 */
 	public String getAlertText() {
-		return chrome.switchTo().alert().getText();
+		return driver.switchTo().alert().getText();
 	}
 
 	/**
@@ -377,7 +372,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	 */
 	public void doubleClick(String cssSelector, String accessValue) {
 
-		Actions action = new Actions(chrome);
+		Actions action = new Actions(driver);
 		action.moveToElement($(cssSelector)).doubleClick().perform();
 	}
 
@@ -422,7 +417,6 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 		$(By.id(id)).setValue(textToEnter);
 	}
 
-	
 	/**
 	 * Method to select element from Dropdown by type
 	 * 
@@ -443,7 +437,6 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 			select_list.selectByVisibleText(option);
 	}
 
-
 	/**
 	 * Method to unselect all option from dropdwon list by cssSelector
 	 * 
@@ -461,7 +454,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	 * 
 	 * @param cssSelector
 	 *            : String : cssSelector value
-	 *            
+	 * 
 	 */
 	public void deselectOptionFromDropdown(String cssSelector, String optionBy, String option) {
 		dropdown = $(cssSelector);
@@ -498,7 +491,6 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 		if (checkbox.isSelected())
 			checkbox.click();
 	}
-
 
 	/**
 	 * Method to select radio button
@@ -548,9 +540,9 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	 */
 	public void handleAlert(String decision) {
 		if (decision.equals("accept"))
-			chrome.switchTo().alert().accept();
+			driver.switchTo().alert().accept();
 		else
-			chrome.switchTo().alert().dismiss();
+			driver.switchTo().alert().dismiss();
 	}
 
 	////////////////////////
@@ -585,7 +577,6 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 		Thread.sleep(Integer.parseInt(time) * 1000);
 	}
 
-	
 	///////////////////////
 	// SCREEN SHOTS METHODS
 	///////////////////////
@@ -605,7 +596,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	public String takeScreenShot() throws IOException {
 
 		Log.INFO("Taking snapshot");
-		File scrFile = ((TakesScreenshot) chrome).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 		Calendar cal = Calendar.getInstance();
@@ -626,7 +617,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 	 */
 	public byte[] embedScreenshotInReport() throws IOException {
 
-		final byte[] screenshot = ((TakesScreenshot) chrome).getScreenshotAs(OutputType.BYTES);
+		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 
 		return screenshot;
 
@@ -642,7 +633,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 		@Attachment("Screenshot on failure")
 		public byte[] makeScreenshotOnFailure() {
 			Log.INFO("Taking screenshot");
-			return ((TakesScreenshot) chrome).getScreenshotAs(OutputType.BYTES);
+			return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		}
 	};
 
@@ -662,7 +653,7 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 
 			scenario.embed(screenshot, "image/png");
 		}
-		chrome.close();
+		driver.close();
 	}
 
 	public void attachSnapshotToReport() {

@@ -2,6 +2,8 @@ package com.qa.tlv.environment;
 
 import com.qa.tlv.methods.AssertionMethods;
 import com.qa.tlv.methods.BrowserUtils;
+import com.qa.tlv.methods.InitBrowserMethods;
+import com.qa.tlv.methods.InitSystemProperties;
 import com.qa.tlv.methods.MiscMethods;
 import com.qa.tlv.methods.PropertiesManagementMethods;
 
@@ -11,5 +13,7 @@ public interface BaseTest {
 	PropertiesManagementMethods propertiesObj = new PropertiesManagementMethods();
 	BrowserUtils browserObj = new BrowserUtils();
 	AssertionMethods assertionObj = new AssertionMethods();
+	InitSystemProperties systemPropertiesObj = new InitSystemProperties();
+	InitBrowserMethods initBrowserObj = new InitBrowserMethods();
 
 }
