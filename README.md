@@ -20,7 +20,6 @@ Installing
 -------------
 Clone the repo to get a working project
 
-
 Running the tests - command line mode
 -------------------
 cd to project path  
@@ -44,6 +43,7 @@ Documentation
 * [Pass external parameters to test](doc/working_with_parameters.md)
 * [Use allure reports](doc/allure_reports.md)
 * [Use predefined steps](doc/canned_steps.md)
+* [Webdriver type support](doc/working_with_webdrivers.md)
 
 Built With
 -------------
