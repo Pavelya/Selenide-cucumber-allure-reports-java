@@ -43,8 +43,6 @@ public class PredefinedStepDefinitions implements BaseTest {
 
 	}
 
-	// zoom in/out page
-
 	// Assertion steps
 	@Then("^User should see page title as \"(.*)\"$")
 	public void check_title(String title) throws TestCaseFailed {

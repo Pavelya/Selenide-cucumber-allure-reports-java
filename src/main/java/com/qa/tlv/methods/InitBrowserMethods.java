@@ -22,7 +22,7 @@ public class InitBrowserMethods implements BaseTest {
 		switch (browserName) {
 		case "chrome":
 			
-			// download chrome driver
+			// download and setup chrome driver
 			chromeSetup.downloadChromeDriver();
 			chromeSetup.unZipIt();
 			chromeSetup.makeWebDriverExecutable();
