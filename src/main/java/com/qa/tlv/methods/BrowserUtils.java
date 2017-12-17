@@ -674,5 +674,5 @@ public class BrowserUtils extends SelectElementByType implements BaseTest {
 			e.printStackTrace();
 		}
 	}
-
+	
 }

@@ -43,7 +43,8 @@ Documentation
 * [Pass external parameters to test](doc/working_with_parameters.md)
 * [Use allure reports](doc/allure_reports.md)
 * [Use predefined steps](doc/canned_steps.md)
-* [Webdriver types support](doc/working_with_webdrivers.md)
+* [Webdriver types support](doc/working_with_webdrivers.md)  
+* [Mobile emulation](doc/mobile_emulation.md)
 
 Built With
 -------------
