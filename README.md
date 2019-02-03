@@ -35,6 +35,8 @@ Documentation
 -------------
 * [Pass external parameters to test](doc/working_with_parameters.md)
 * [Use allure reports](doc/allure_reports.md)
+* [Bug template](doc/bug_report.md)
+* [Feature request template](doc/feature_request.md)
 
 Built With
 -------------
