@@ -18,7 +18,7 @@ Git
 
 Installing
 -------------
-Clone the repo to get a working project
+git clone https://github.com/Pavelya/selenide-cucumber-allure-reports-java  
 
 Running the tests - command line mode
 -------------------
