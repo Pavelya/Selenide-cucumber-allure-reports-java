@@ -1,153 +1,118 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>Automation</groupId>
-	<artifactId>AutomationBase</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
-	<name>AutomatoinBase</name>
+	<groupId>com.qa.automation</groupId>
+	<artifactId>test-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>test-app</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
 	<properties>
-		<!-- Properties section -->
-		<aspectj.version>1.8.10</aspectj.version>
-		<cucumber.version>1.2.5</cucumber.version>
-		<allure.cucumber.version>2.0-BETA6</allure.cucumber.version>
-		<cucumber.junit.version>1.2.5</cucumber.junit.version>
-		<junit.version>4.12</junit.version>
-		<selenium.java.version>3.4.0</selenium.java.version>
-		<selenium.server.version>3.4.0</selenium.server.version>
-		<guava.version>21.0</guava.version>
-		<maven-compiler-plugin>3.2</maven-compiler-plugin>
-		<maven-surefire-plugin>2.20</maven-surefire-plugin>
-		<allure-maven>2.8</allure-maven>
-		<allure.reportVersion>2.3.1</allure.reportVersion>
-		<org.apache.commons.version>3.4</org.apache.commons.version>
-		<selenide.version>4.7</selenide.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<assertj.version>3.8.0</assertj.version>
+		<cucumber-junit.version>1.2.5</cucumber-junit.version>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+		<rest-assured.version>3.0.3</rest-assured.version>
+		<selenide.version>5.1.0</selenide.version>
+		<slf4j.version>1.7.24</slf4j.version>
+		<allure-cucumber-jvm.version>2.8.1</allure-cucumber-jvm.version>
 	</properties>
 
+
+
 	<dependencies>
-	
-	<!-- Selenide  -->
-			<dependency>
-			<groupId>com.codeborne</groupId>
-			<artifactId>selenide</artifactId>
-			<version>${selenide.version}</version>
-		</dependency>
-
-		<!-- Apache string utils -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${org.apache.commons.version}</version>
-		</dependency>
-
-		<dependency>
-			<!-- allure report dependencies -->
-			<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-cucumber-jvm</artifactId>
-			<version>${allure.cucumber.version}</version>
-		</dependency>
-
-		<!-- Cucumber dependencies -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>${cucumber.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>${cucumber.junit.version}</version>
-		</dependency>
-
-		<!--CSV parser -->
-		<dependency>
-			<groupId>com.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>4.0</version>
-		</dependency>
-
-		<!-- Junit dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<!-- <scope>test</scope> -->
+			<version>4.11</version>
+			<scope>test</scope>
 		</dependency>
-
-		<!-- Selenium-webdriver dependencies -->
 		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>${selenium.java.version}</version>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>${selenide.version}</version>
+			<scope>test</scope>
 		</dependency>
-
 		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>${selenium.server.version}</version>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber-junit.version}</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber-junit.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber-jvm</artifactId>
+			<version>${allure-cucumber-jvm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin}</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.7</source>
-					<target>1.7</target>
-					<compilerArgument>-Werror</compilerArgument>
-
-					<systemPropertyVariables>
-						<property>
-							<name>browser</name>
-							<value>${browser}</value>
-						</property>
-						<property>
-							<name>cloud_config</name>
-							<value>${cloud_config}</value>
-						</property>
-					</systemPropertyVariables>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven-surefire-plugin}</version>
-				<configuration>
-					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-					<!-- <systemPropertyVariables> <allure.results.directory>target/allure-results</allure.results.directory> 
-						<outputDirectory>target/allure-results</outputDirectory> </systemPropertyVariables> -->
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjweaver</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-			<plugin>
-				<groupId>io.qameta.allure</groupId>
-				<artifactId>allure-maven</artifactId>
-				<version>${allure-maven}</version>
-				<configuration>
-					<reportVersion>${allure.reportVersion}</reportVersion>
-				</configuration>
-			</plugin>
-
-		</plugins>
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+				defaults (may be moved to parent pom) -->
+			<plugins>
+				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>

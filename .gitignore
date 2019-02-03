@@ -42,11 +42,3 @@ Thumbs.db
 /allure-results/
 /allure-report/
 /target/
-
-# Webdriver #
-######################
-/src/main/resources/selenium/
-
-# Output results file generated during tests #
-############################################
-/src/main/resources/downloads/
