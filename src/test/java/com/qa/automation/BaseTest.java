@@ -18,7 +18,7 @@ import com.qa.common.AllureReportConfigurationSetup;
         glue = "com/qa/step_definitions",
         features = "src/test/resources")
 
-public class BaseTest implements BaseConfig{
+public class BaseTest{
 
     @BeforeClass
     static public void beforeSuite() {

@@ -1,4 +1,4 @@
-# Automation base
+# selenide-cucumber-allure-reports-java
 
 Automation Testing Using Selenide API, BDD and Allure reports
 
@@ -24,27 +24,17 @@ Running the tests - command line mode
 -------------------
 cd to project path  
 
-mvn clean test   
-"-Dbrowser=chrome"  
-"-Denv=pp1"  
-"-Dtest=BaseRunner"  
-"-Dcucumber.options=--tags @functional_tests"  
-"-Dcucumber.options="--plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+mvn clean install test -U -Denv=pp1 "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
 
 Running the tests - from IDE  
 -------------------
-Run [src/test/java/cucumber_runners/BaseRunner.java](src/test/java/cucumber_runners/BaseRunner.java)  as maven test
+Run [src/test/java/com/qa/automation/BaseTest.java](src/test/java/com/qa/automation/BaseTest.java)  as maven test
 
 
 Documentation
 -------------
-* [Installation](doc/installation.md)
-* [Run tests](doc/run_tests.md)
 * [Pass external parameters to test](doc/working_with_parameters.md)
 * [Use allure reports](doc/allure_reports.md)
-* [Use predefined steps](doc/canned_steps.md)
-* [Webdriver types support](doc/working_with_webdrivers.md)  
-* [Mobile emulation](doc/mobile_emulation.md)
 
 Built With
 -------------
@@ -60,8 +50,7 @@ Please read [CONTRIBUTING.md](doc/CONTRIBUTING.md) for details of the process fo
 
 Versioning
 -------------
-[SemVer](http://semver.org/) is in use for versioning.   
-For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+[SemVer](http://semver.org/) is in use for versioning.  
 
 Authors
 -------------

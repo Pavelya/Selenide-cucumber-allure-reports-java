@@ -11,14 +11,7 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.qa.automation.BaseConfig;
-
-/**
- * @author pavely Utility to control environment
- * 
- */
-
-public class PropertiesManagementMethods implements BaseConfig {
+public class PropertiesManagementMethods{
 
     protected static Logger logger = LoggerFactory.getLogger(PropertiesManagementMethods.class);
 

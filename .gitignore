@@ -33,12 +33,9 @@
 ehthumbs.db
 Thumbs.db
 
-# Screenshots #
-######################
-/Screenshots
-
 # Reports #
 ######################
 /allure-results/
 /allure-report/
 /target/
+/allure-screenshots/

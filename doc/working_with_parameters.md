@@ -2,14 +2,14 @@
 
 ##### Two types of configuration files are enabled in project:
 
-_src/main/resources/config.properties_  
+_src/test/resources/config.properties_  
 
 	Goal: to store configuration, not depends from environment (example: folderName)  
 	  
 	Usage: PropertiesManagementMethods props = new PropertiesManagementMethods();  
 	String folderName = props.getProperty(folderNameProperty);
 	
-_src/main/resources/ANY_NAME.environment.properties_  
+_src/test/resources/ANY_NAME.environment.properties_  
 
 	Goal: pass parameters, related to specific environment  
 	  
