@@ -1,4 +1,4 @@
-package com.qa.step_definitions.test;
+package com.qa.step_definitions;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -6,8 +6,11 @@ import cucumber.api.java.Before;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.codeborne.selenide.WebDriverRunner;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,6 +27,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.qa.automation.JavaSample.getBS;
 
 public class Hooks {
 
@@ -34,6 +38,7 @@ public class Hooks {
     private static final String DESKTOP_TAG = "@desktop";
     private static final String MOBILE_TAG = "@mobile";
     private static final String ALLURE_SNAPSHOTS_FOLDER = "allure-screenshots/";
+    
 
     @Before
     public void before(Scenario scenario) throws Exception {
@@ -42,7 +47,8 @@ public class Hooks {
         tagFlags.put("desktopTest", scenario.getSourceTagNames().contains(DESKTOP_TAG));
         tagFlags.put("mobileTest", scenario.getSourceTagNames().contains(MOBILE_TAG));
 
-        open("");
+        WebDriverRunner.setWebDriver(getBS());
+        //open("");
     }
 
     @After
@@ -57,7 +63,13 @@ public class Hooks {
         writeBytesToFile(screenshot, ALLURE_SNAPSHOTS_FOLDER + screenshotFileName);
         addAllureAttachment(screenshotFileName);
 
-        close();
+        try {
+            getBS().close();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        //close();
         logger.info("Scenario: " + scenario.getName() + " finished");
     }
 
