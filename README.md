@@ -1,22 +1,21 @@
 # selenide-cucumber-allure-reports-java
 
-Automation Testing Using Selenide API, BDD and Allure reports
+Automation Testing Using BrowserStack, Selenide API, Cucumber and Allure reports
 
-Automation base is a behavior driven development (BDD) approach to write automation test script to test Web.  
-The framework supports reporting with Allure reports
-Selenide is a framework for test automation powered by Selenium WebDriver.
-Official documentation: http://selenide.org/
+Behavior Driven Development (BDD) approach to write automation test scripts.  
+The framework is fully functional 'out of the box'. 
+
 
 Getting Started
 -------------
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 Prerequisites
---------------
-Maven  
-Git
+--------------  
+[Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Getting Started - Installing Git  
+[Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) - Maven in 5 Minutes  
 
-Installing
+How to install this project
 -------------
 git clone https://github.com/Pavelya/selenide-cucumber-allure-reports-java  
 
@@ -40,11 +39,12 @@ Documentation
 
 Built With
 -------------
-* [Selenium](http://www.seleniumhq.org/) - The web framework to automate browsers
-* [Selenide](http://selenide.org/) - Test framework over Selenium
+* [Browserstack](https://www.browserstack.com/) - Cloud web and mobile testing platform  
+* [Selenium](http://www.seleniumhq.org/) - Portable framework for testing web applications
+* [Selenide](http://selenide.org/) - Framework for test automation powered by Selenium WebDriver
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Cucumber](https://cucumber.io/) - Behavior Driven Development (BDD) library 
-* [Allure reports](http://allure.qatools.ru/) - Reporting 
+* [Allure reports](http://allure.qatools.ru/) - Framework designed to create test execution reports
 
 Contributing
 -------------
@@ -68,3 +68,5 @@ Huge kudos to wonderful software that allowed to create this project:
 
 [![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com)  
 [![Selenide](https://selenide.org/images/selenide-logo-big.png)](https://selenide.org)  
+[![Allure](https://avatars3.githubusercontent.com/u/5879127?s=200&v=4)](https://github.com/allure-framework/allure2)  
+
