@@ -66,5 +66,5 @@ Thanks
 -------------  
 Huge kudos to wonderful software that allowed to create this project:
 
-[![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com)
+[![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com)  
 [![Selenide](https://selenide.org/images/selenide-logo-big.png)](https://selenide.org)  
