@@ -61,3 +61,9 @@ Authors
 License
 -------------
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+Thanks  
+-------------  
+Tools that were used to build the solution:
+
+[![Selenide](https://selenide.org/images/selenide-logo-big.png)](https://selenide.org)  

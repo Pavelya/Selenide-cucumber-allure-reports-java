@@ -20,7 +20,7 @@ public class PageObjectTemplate {
     public void userCanSearch() {
         logger.info("Here");
         open(getEnvironmentProperty("preProdUrl"));
-        open(getProperty("baseUrl"));
+        //open(getProperty("baseUrl"));
     }
 
 }
