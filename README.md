@@ -1,6 +1,6 @@
 # selenide-cucumber-allure-reports-java
 
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=RW1vMXJlNXhwaFZHMUNnQURraDBYQVZ0bFRoZGRvWlFTVWIyUi96MzBsTT0tLTJoM0l4SjZld3VMTTdiUlo2RHFDdFE9PQ==--3b661495800f3af8f6f108eeca92e)](https://www.browserstack.com/automate/public-build/RW1vMXJlNXhwaFZHMUNnQURraDBYQVZ0bFRoZGRvWlFTVWIyUi96MzBsTT0tLTJoM0l4SjZld3VMTTdiUlo2RHFDdFE9PQ==--3b661495800f3af8f6f108eeca92e)
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=WlNtcU1mYUZESkNFTExSNXBPSHRxRFM5VGNwZmlhcnREMWpPZjlRQkwzZz0tLXNWSzYxK1dvQkNnMXZ4VUsrdUFpd1E9PQ==--7c4db0f420da95fbeff4b48279188)](https://www.browserstack.com/automate/public-build/WlNtcU1mYUZESkNFTExSNXBPSHRxRFM5VGNwZmlhcnREMWpPZjlRQkwzZz0tLXNWSzYxK1dvQkNnMXZ4VUsrdUFpd1E9PQ==--7c4db0f420da95fbeff4b48279188)
 
 Automation Testing Using BrowserStack, Selenide API, Cucumber and Allure reports
 
