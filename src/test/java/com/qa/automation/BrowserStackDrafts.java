@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class JavaSample {
+public class BrowserStackDrafts {
 
     public static final String USERNAME = "pavelyampolsky1";
     public static final String AUTOMATE_KEY = "PyrAvcDs4XBiW6soEZPp";

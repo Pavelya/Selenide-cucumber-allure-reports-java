@@ -1,6 +1,6 @@
 # selenide-cucumber-allure-reports-java
 
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=c0VSRm5MM20zMnlUcHRLdFZHYUpjNFdmZ3BiVkZGZFpsMmh6ZzA0SnptOD0tLXA4ZWRYY3BYLzBBMzJlYlNKODdHYWc9PQ==--10311b00dd8abc3189e7603be284b84de8e879bbWHM0005970)](https://www.browserstack.com/automate/public-build/c0VSRm5MM20zMnlUcHRLdFZHYUpjNFdmZ3BiVkZGZFpsMmh6ZzA0SnptOD0tLXA4ZWRYY3BYLzBBMzJlYlNKODdHYWc9PQ==--10311b00dd8abc3189e7603be284b84de8e879bbWHM0005970)
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=NXdCNkhNR090eXZ2K3dGd3NMV012SEJwVTZJa21WRnJRbGJuT1A1b2NzTT0tLTNMWTRmSW8zbGpjNUFEd29ZQUZwQ3c9PQ==--3fc08c598fcdba2229dff66e3d941b61807e4dc0WHM0005970)](https://www.browserstack.com/automate/public-build/NXdCNkhNR090eXZ2K3dGd3NMV012SEJwVTZJa21WRnJRbGJuT1A1b2NzTT0tLTNMWTRmSW8zbGpjNUFEd29ZQUZwQ3c9PQ==--3fc08c598fcdba2229dff66e3d941b61807e4dc0WHM0005970)
 
 Automation Testing Using BrowserStack, Selenide API, Cucumber and Allure reports
 

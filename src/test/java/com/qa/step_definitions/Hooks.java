@@ -27,7 +27,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.qa.automation.JavaSample.getBS;
+import static com.qa.automation.BrowserStackDrafts.getBS;
 
 public class Hooks {
 
@@ -63,13 +63,8 @@ public class Hooks {
         writeBytesToFile(screenshot, ALLURE_SNAPSHOTS_FOLDER + screenshotFileName);
         addAllureAttachment(screenshotFileName);
 
-        try {
-            getBS().close();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        //close();
+
+        close();
         logger.info("Scenario: " + scenario.getName() + " finished");
     }
 
