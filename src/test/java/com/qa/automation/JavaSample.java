@@ -22,6 +22,8 @@ public class JavaSample {
         caps.setCapability("device", "Samsung Galaxy S8");
         caps.setCapability("realMobile", "true");
         caps.setCapability("os_version", "7.0");
+        caps.setCapability("build", "testBuild");
+        caps.setCapability("project", "testProject");
 
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
         return driver;
