@@ -47,8 +47,8 @@ public class Hooks {
         tagFlags.put("desktopTest", scenario.getSourceTagNames().contains(DESKTOP_TAG));
         tagFlags.put("mobileTest", scenario.getSourceTagNames().contains(MOBILE_TAG));
 
-        WebDriverRunner.setWebDriver(getBS());
-        //open("");
+        //WebDriverRunner.setWebDriver(getBS());
+        open("");
     }
 
     @After
