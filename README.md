@@ -1,5 +1,7 @@
 # selenide-cucumber-allure-reports-java
 
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=RW1vMXJlNXhwaFZHMUNnQURraDBYQVZ0bFRoZGRvWlFTVWIyUi96MzBsTT0tLTJoM0l4SjZld3VMTTdiUlo2RHFDdFE9PQ==--3b661495800f3af8f6f108eeca92e)](https://www.browserstack.com/automate/public-build/RW1vMXJlNXhwaFZHMUNnQURraDBYQVZ0bFRoZGRvWlFTVWIyUi96MzBsTT0tLTJoM0l4SjZld3VMTTdiUlo2RHFDdFE9PQ==--3b661495800f3af8f6f108eeca92e)
+
 Automation Testing Using BrowserStack, Selenide API, Cucumber and Allure reports
 
 Behavior Driven Development (BDD) approach to write automation test scripts.  
