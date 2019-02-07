@@ -1,9 +1,7 @@
 package com.qa.common.pageobject;
 
 import com.codeborne.selenide.SelenideElement;
-import static com.qa.common.PropertiesManagementMethods.getEnvironmentProperty;
-import static com.qa.common.PropertiesManagementMethods.getProperty;
-
+import static com.qa.common.PropertiesConfig.getEnvironmentProperty;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +18,6 @@ public class OpenGoogle {
     public void userCanSearch() {
         logger.info("Here");
         open(getEnvironmentProperty("preProdUrl"));
-        section.click();
-        //open(getProperty("baseUrl"));
     }
 
 }

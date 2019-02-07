@@ -2,51 +2,54 @@ package com.qa.common;
 
 import java.io.File;
 import java.io.IOException;
+
+import org.aeonbits.owner.ConfigFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AllureReportConfigurationSetup{
+public class AllureReportConfig{
     
-    protected static Logger logger = LoggerFactory.getLogger(AllureReportConfigurationSetup.class);
+    protected static Logger logger = LoggerFactory.getLogger(AllureReportConfig.class);
+    protected static MainConfig config = ConfigFactory.create(MainConfig.class);
 
     // folders params
-    static String allureReportResultsFolder = "allure-results";
-    static String allureReportScreenshotsFolder = "allure-screenshots";
+    static String resultsFolder = config.allure_results_folder();
+    static String screenshotsFolder = config.allure_screenshots_folder();
 
     public static void prepareAllureResultsFolder() {
 
         // step 1. delete allure results folder
-        File allureResultsFolder = new File(allureReportResultsFolder);
+        File allureResultsFolder = new File(resultsFolder);
         try {
-            deleteAllureResultsFolder(allureResultsFolder);
+            deleteResultsFolder(allureResultsFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // step 2. create allure results folder
         try {
-            createAllureReportFolder(allureResultsFolder);
+            createReportFolder(allureResultsFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // step 3. delete allure screenshots folder
-        File allureSnapshotsFolder = new File(allureReportScreenshotsFolder);
+        File allureSnapshotsFolder = new File(screenshotsFolder);
         try {
-            deleteAllureResultsFolder(allureSnapshotsFolder);
+            deleteResultsFolder(allureSnapshotsFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // step 4. create allure screenshots folder
         try {
-            createAllureReportFolder(allureSnapshotsFolder);
+            createReportFolder(allureSnapshotsFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void deleteAllureResultsFolder(File allureResultsFolder) throws IOException {
+    public static void deleteResultsFolder(File allureResultsFolder) throws IOException {
 
         if (allureResultsFolder.isDirectory()) {
 
@@ -54,7 +57,7 @@ public class AllureReportConfigurationSetup{
             if (allureResultsFolder.list().length == 0) {
 
                 allureResultsFolder.delete();
-                logger.info("Folder is deleted : " + allureResultsFolder.getAbsolutePath());
+                logger.info("Directory is deleted : " + allureResultsFolder.getAbsolutePath());
 
             } else {
 
@@ -66,7 +69,7 @@ public class AllureReportConfigurationSetup{
                     File fileDelete = new File(allureResultsFolder, temp);
 
                     // recursive delete
-                    deleteAllureResultsFolder(fileDelete);
+                    deleteResultsFolder(fileDelete);
                 }
 
                 // check the directory again, if empty then delete it
@@ -83,7 +86,7 @@ public class AllureReportConfigurationSetup{
         }
     }
 
-    public static void createAllureReportFolder(File allureResultsFolder) throws IOException {
+    public static void createReportFolder(File allureResultsFolder) throws IOException {
 
         if (!allureResultsFolder.exists()) {
             if (allureResultsFolder.mkdir()) {

@@ -7,7 +7,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import com.qa.common.AllureReportConfigurationSetup;
+import static com.qa.common.AllureReportConfig.prepareAllureResultsFolder;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty",
@@ -24,7 +24,7 @@ public class BaseTest{
     static public void beforeSuite() {
 
         // prepare reports folder
-        AllureReportConfigurationSetup.prepareAllureResultsFolder();
+        prepareAllureResultsFolder();
     }
 
     @AfterClass
