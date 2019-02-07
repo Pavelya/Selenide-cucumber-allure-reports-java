@@ -160,6 +160,6 @@ public class Hooks {
     }
 
     private boolean bsLocal() {
-        return System.getProperty("bs_local", "false").contains("true") ? true : false;
+        return System.getProperty("bs_local", "true").contains("true") ? true : false;
     }
 }
