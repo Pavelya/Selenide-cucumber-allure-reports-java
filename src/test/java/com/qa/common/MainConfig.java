@@ -12,16 +12,18 @@ public interface MainConfig extends Config {
 
     String bs_server();
 
-    boolean bs_local();
-
     String bs_project();
 
     String bs_build();
 
-    boolean bs_debug();
+    String bs_debug();
+    
+    String bs_hub();
 
     String allure_results_folder();
 
     String allure_screenshots_folder();
+    
+    String bs_devices_config();
 
 }

@@ -18,6 +18,7 @@ public class OpenGoogle {
     public void userCanSearch() {
         logger.info("Here");
         open(getEnvironmentProperty("preProdUrl"));
+        section.click();
     }
 
 }
