@@ -65,6 +65,7 @@ public class Hooks {
 
 
         close();
+        System.out.println("AAAAAAAAAAKJLKJLJLKLKLKJLKJLKJLK");
         logger.info("Scenario: " + scenario.getName() + " finished");
     }
 
