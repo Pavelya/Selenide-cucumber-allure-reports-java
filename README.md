@@ -47,6 +47,7 @@ Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Cucumber](https://cucumber.io/) - Behavior Driven Development (BDD) library 
 * [Allure reports](http://allure.qatools.ru/) - Framework designed to create test execution reports
+* [Owner API](http://owner.aeonbits.org/) - Java properties management
 
 Contributing
 -------------
@@ -71,4 +72,7 @@ Huge kudos to wonderful software that allowed to create this project:
 [![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com)  
 [![Selenide](https://selenide.org/images/selenide-logo-big.png)](https://selenide.org)  
 [![Allure](https://avatars3.githubusercontent.com/u/5879127?s=200&v=4)](https://github.com/allure-framework/allure2)  
+[![Cucumber](https://raw.githubusercontent.com/cucumber-ltd/brand/master/images/png/notm/cucumber-black/cucumber-black-128.png)](https://cucumber.io/)
+[![Maven](https://maven.apache.org/images/maven-logo-black-on-white.png)](https://maven.apache.org/)
+
 

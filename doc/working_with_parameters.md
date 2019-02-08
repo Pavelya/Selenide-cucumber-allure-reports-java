@@ -2,12 +2,12 @@
 
 ##### Two types of configuration files are enabled in project:
 
-_src/test/resources/config.properties_  
+_src/test/resources/MainConfig.properties_  
 
 	Goal: to store configuration, not depends from environment (example: folderName)  
 	  
-	Usage: PropertiesManagementMethods props = new PropertiesManagementMethods();  
-	String folderName = props.getProperty(folderNameProperty);
+	Usage: protected static MainConfig config = ConfigFactory.create(MainConfig.class); 
+	String ALLURE_SNAPSHOTS_FOLDER = config.allure_screenshots_folder();  
 	
 _src/test/resources/ANY_NAME.environment.properties_  
 
@@ -15,6 +15,6 @@ _src/test/resources/ANY_NAME.environment.properties_
 	  
 	Usage: to point to environment config file pass env param: mvn test  "-Dbrowser=chrome" "-Denv=ANY_NAME"...  
 	to get correct cofig: System.getProperty("ANY_NAME").toLowerCase();  
-	to read data from environment cofig: preProdUrl = getEnvironmentProperty("preProdUrl");  
+	String preProdUrl = getEnvironmentProperty("preProdUrl");  
 		   
 	
