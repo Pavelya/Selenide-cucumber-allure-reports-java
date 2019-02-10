@@ -25,7 +25,7 @@ Running the tests - command line mode
 -------------------
 cd to project path  
 
-mvn clean install test -U -Denv=pp1 "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+mvn clean install test -U -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
 
 Running the tests - from IDE  
 -------------------
