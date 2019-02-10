@@ -25,5 +25,9 @@ public interface MainConfig extends Config {
     String allure_screenshots_folder();
     
     String bs_devices_config();
+    
+    String bs_api();
+    
+    String bs_automation();
 
 }
