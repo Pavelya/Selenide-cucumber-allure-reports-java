@@ -3,9 +3,9 @@
 ##### GENERAL:  
 
 	Configuration is set in following classes:  
-	_MainConfig_  
-	_TestEnvironmentConfig_  
-	_BrowserStackDeviceConfig_  
+	MainConfig
+	TestEnvironmentConfig  
+	BrowserStackDeviceConfig  
 
 ##### MAIN CONFIG:  
 
