@@ -21,7 +21,7 @@
 	Usage: pass ...-DuseBS=true...  param to enable browserstack.    
 	To set a device pass ...-Ddevice=DEVICE_NAME...     
 	List of avalible devices is located under:   
-	_src/test/resources/BROWSERSTACK_DEVICES_CONFIG_  
+	src/test/resources/BROWSERSTACK_DEVICES_CONFIG 
 	To add / update devices config use Browserstack documentation:  
 	https://www.browserstack.com/automate/capabilities    
 		
@@ -35,8 +35,7 @@ _src/test/java/com/qa/common/Browserstack.java_
 
 _src/test/java/com/qa/common/MainConfig.java_
 	Config map to hold browserstack configuraton  
-	For more info regarding config use, see: 
-	[Pass external parameters to test](doc/working_with_parameters.md)
+	For more info regarding config use, see working with params doc.   
 		
 _src/test/resources/MainConfig.properties_  
 
