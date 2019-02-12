@@ -25,7 +25,7 @@ Running the tests - command line mode
 -------------------
 cd to project path  
 
-mvn clean install test -U -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
 
 Running the tests - from IDE  
 -------------------
@@ -34,6 +34,7 @@ Run [src/test/java/com/qa/automation/BaseTest.java](src/test/java/com/qa/automat
 
 Documentation
 -------------
+* [Launch options](doc/launch_options.md)
 * [Pass external parameters to test](doc/working_with_parameters.md)
 * [Use allure reports](doc/allure_reports.md)
 * [Bug template](doc/bug_report.md)

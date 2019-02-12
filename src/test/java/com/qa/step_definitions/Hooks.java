@@ -25,6 +25,8 @@ import java.util.Map;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.qa.common.Browserstack.start;
 import static com.qa.common.Browserstack.takeDown;
+import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.open;
 
 import com.qa.common.MainConfig;
 
@@ -43,13 +45,23 @@ public class Hooks {
         logger.info("Scenario: " + scenario.getName() + " started");
         tagFlags.put("desktopTest", scenario.getSourceTagNames().contains(DESKTOP_TAG));
         tagFlags.put("mobileTest", scenario.getSourceTagNames().contains(MOBILE_TAG));
-        start(scenario);
+
+        if (runOnBrowserStack()) {
+            start(scenario);
+        } else {
+            open("");
+        }
     }
 
     @After
     public void after(Scenario scenario) throws Exception {
         takeSnapshot(scenario);
-        takeDown(scenario);
+
+        if (runOnBrowserStack()) {
+            takeDown(scenario);
+        } else {
+            close();
+        }
         logger.info("Scenario: " + scenario.getName() + " finished");
     }
 
@@ -97,5 +109,9 @@ public class Hooks {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         Calendar cal = Calendar.getInstance();
         return "screenshot_" + dateFormat.format(cal.getTime()) + ".png";
+    }
+
+    private boolean runOnBrowserStack() {
+        return System.getProperty("useBS", "false").contains("true") ? true : false;
     }
 }
