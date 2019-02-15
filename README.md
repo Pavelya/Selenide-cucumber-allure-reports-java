@@ -1,6 +1,6 @@
 # QA Panda
 
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=NXdCNkhNR090eXZ2K3dGd3NMV012SEJwVTZJa21WRnJRbGJuT1A1b2NzTT0tLTNMWTRmSW8zbGpjNUFEd29ZQUZwQ3c9PQ==--3fc08c598fcdba2229dff66e3d941b61807e4dc0WHM0005970)](https://www.browserstack.com/automate/public-build/NXdCNkhNR090eXZ2K3dGd3NMV012SEJwVTZJa21WRnJRbGJuT1A1b2NzTT0tLTNMWTRmSW8zbGpjNUFEd29ZQUZwQ3c9PQ==--3fc08c598fcdba2229dff66e3d941b61807e4dc0WHM0005970)
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)](https://www.browserstack.com/automate/public-build/TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)
 
 Automation Testing using BrowserStack, Selenide API, Cucumber and Allure reports
 
@@ -17,7 +17,7 @@ Prerequisites
 
 How to install this project
 -------------
-git clone https://github.com/Pavelya/selenide-cucumber-allure-reports-java  
+git clone https://github.com/Pavelya/QA-Panda  
 
 Running the tests - command line mode
 -------------------
