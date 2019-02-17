@@ -1,4 +1,4 @@
-[![Github pages](https://github.com/Pavelya/QA-Panda/blob/master/src/test/resources/logo/logo.png)](https://pavelya.github.io/QA-Panda/)
+# QA Panda
 
 [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)](https://www.browserstack.com/automate/public-build/TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)
 
