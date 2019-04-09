@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.qa.automation</groupId>
-	<artifactId>test-app</artifactId>
-	<version>2.2</version>
+	<artifactId>travelpayouts.com</artifactId>
+	<version>1.0</version>
 
-	<name>test-app</name>
+	<name>travelpayouts.com</name>
 	<url>https://pavelya.github.io/QA-Panda/</url>
 
 	<properties>

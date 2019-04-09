@@ -1,9 +1,11 @@
-# QA Panda
+# travelpayouts.com
 
 [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)](https://www.browserstack.com/automate/public-build/TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)
 
+[![travelpayouts](https://www.travelpayouts.com/powered_by/img/tp.png)](http://whitelabel.travelpayouts.com/)
 
-Automation Testing using BrowserStack, Selenide API, Cucumber and Allure reports
+
+Automation for travelpayouts.com using BrowserStack, Selenide API, Cucumber and Allure reports
 
 Behavior Driven Development (BDD) approach to write automation test scripts.  
 
@@ -24,7 +26,7 @@ Running the tests - command line mode
 -------------------
 cd to project path  
 
-mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @search_form --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
 
 Running the tests - from IDE  
 -------------------
@@ -49,10 +51,6 @@ Built With
 * [Allure reports](http://allure.qatools.ru/) - Framework designed to create test execution reports
 * [Owner API](http://owner.aeonbits.org/) - Java properties management
 
-Contributing
--------------
-Please read [CONTRIBUTING.md](doc/CONTRIBUTING.md) for details of the process for submitting pull requests.
-
 Versioning
 -------------
 [SemVer](http://semver.org/) is in use for versioning.  
@@ -63,16 +61,8 @@ Authors
 
 License
 -------------
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Automation framework is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.  
+Test content is owned by: travelpayouts.com  
 
-Thanks  
--------------  
-Huge kudos to wonderful software that allowed to create this project:
-
-[![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com)  
-[![Selenide](https://selenide.org/images/selenide-logo-big.png)](https://selenide.org)  
-[![Allure](https://avatars3.githubusercontent.com/u/5879127?s=200&v=4)](https://github.com/allure-framework/allure2)  
-[![Cucumber](https://raw.githubusercontent.com/cucumber-ltd/brand/master/images/png/notm/cucumber-black/cucumber-black-128.png)](https://cucumber.io/)
-[![Maven](https://maven.apache.org/images/maven-logo-black-on-white.png)](https://maven.apache.org/)
 
 
