@@ -9,6 +9,10 @@ public class TestEnvironmentConfig {
     @Sources({ "${pathToEnvConfig}" })
     public interface TestEnvConfig extends Config {
         String googleUrl();
+
+        String searchFormTitle();
+        
+        String mainPage();
     }
 
     public static TestEnvConfig createTestEnvConfig() {
