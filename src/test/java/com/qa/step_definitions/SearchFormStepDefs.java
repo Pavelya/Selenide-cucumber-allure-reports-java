@@ -2,13 +2,13 @@ package com.qa.step_definitions;
 
 import static com.codeborne.selenide.Selenide.page;
 
-import com.qa.common.pageobject.SearchForm;
+import com.qa.common.pageobject.SearchHotelsForm;
 
 import cucumber.api.java.en.Given;
 
 public class SearchFormStepDefs {
 
-    private SearchForm searchForm = page(SearchForm.class);
+    private SearchHotelsForm searchForm = page(SearchHotelsForm.class);
     
     @Given("^search form title is displayed with valid content$")
     public void searchFormTitleValidation() throws Throwable {
@@ -23,5 +23,26 @@ public class SearchFormStepDefs {
     @Given("^switcher between flighs and hotels is displayed$")
     public void flightsHotelsSwitcherValidation() throws Throwable {
         searchForm.flightsHotelsSwitcherValidation();
+    }
+    
+    @Given("^search hotels form is displayed with valid content$")
+    public void validateSearchHotelForm() throws Throwable {
+        searchForm.validateSearchHotelForm();
+    }
+    
+    @Given("^user search for (.*) city in search hotels form$")
+    public void searchHotel(String cityName) throws Throwable {
+        searchForm.searchHotelByCityName(cityName);
+        searchForm.clickOnFirstSearchResult();
+    }
+    
+    @Given("^user clicks on search submit button")
+    public void submitSearch() throws Throwable {
+        searchForm.submitSearch();
+    }
+    
+    @Given("^search results are displayed")
+    public void validateSearchResults() throws Throwable {
+        searchForm.validateSearchResults();
     }
 }
