@@ -19,9 +19,28 @@ public class SearchForm {
     @FindBy(css = "div.TPWL-header-content__label")
     protected SelenideElement searchFormTitle;
 
+    @FindBy(css = "div.user-settings-informer")
+    protected SelenideElement settingsDropdown;
+    
+    @FindBy(css = " ul.mewtwo-tabs_list")
+    protected SelenideElement flightsHotelsSwitcher;
+    
+   
+
     public void searchFormTitleValidation() {
         logger.info("Check if search form tile is displayed");
         logger.info("Check if search form tile content is valid");
         searchFormTitle.shouldBe(visible).shouldHave(text(testConf.searchFormTitle()));
+    }
+
+    public void settingsDropdownValidation() {
+        logger.info("Check if settings dropdown element is dispalyed");
+        settingsDropdown.shouldBe(visible);
+    }
+    
+    public void flightsHotelsSwitcherValidation() {
+        logger.info("Check if switcher between flighs and hotels is displayed");
+        flightsHotelsSwitcher.shouldBe(visible);
+        // TODO: add functionality of click. Not part of POC 
     }
 }

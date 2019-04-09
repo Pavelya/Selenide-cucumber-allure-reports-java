@@ -14,4 +14,14 @@ public class SearchFormStepDefs {
     public void searchFormTitleValidation() throws Throwable {
         searchForm.searchFormTitleValidation();
     }
+    
+    @Given("^user settings dropdown is displayed$")
+    public void settingsDropdownValidation() throws Throwable {
+        searchForm.settingsDropdownValidation();
+    }
+    
+    @Given("^switcher between flighs and hotels is displayed$")
+    public void flightsHotelsSwitcherValidation() throws Throwable {
+        searchForm.flightsHotelsSwitcherValidation();
+    }
 }

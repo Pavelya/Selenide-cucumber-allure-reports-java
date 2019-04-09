@@ -8,4 +8,5 @@ Feature: Verify main search form founctionality
   Scenario: Search form content
     Given user opens travelpayouts page
     And search form title is displayed with valid content
-    
+    And user settings dropdown is displayed
+    And switcher between flighs and hotels is displayed
