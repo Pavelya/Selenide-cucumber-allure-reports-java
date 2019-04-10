@@ -1,9 +1,9 @@
-@smoke_tests
-Feature: Verify main search form founctionality 
+@smoke_tests 
+Feature: Verify core founctionality 
 
 	As an Internet user
   I want to be able to navigate to main travelpayouts page
-  So that I can use search form
+  So that I can use main functionality
 
 Background: 
 	Given user opens travelpayouts page 
@@ -22,7 +22,21 @@ Scenario: Search for hotel
 	And user clicks on search submit button 
 	Then search results are displayed 
 	When user is clicked on Book button for the first sugested hotel 
-	Then the user is redirected to external provider 
+	Then the user is redirected to external provider page 
+	
+Scenario: Open hotel detailed page 
+	And user search for Moscow city in search hotels form 
+	And user clicks on search submit button 
+	Then search results are displayed 
+	When user is clicked on hotel name for the first sugested hotel 
+	Then the page with hotel details is displayed 
+	
+Scenario: Book hotel from selected provider 
+	And user search for Moscow city in search hotels form 
+	And user clicks on search submit button 
+	Then search results are displayed 
+	When user is clicked on external provider name for the first sugested hotel 
+	Then the user is redirected to selected external provider page 
 	
 Scenario: Search for flight 
 	And user switches to flight search 
@@ -34,7 +48,16 @@ Scenario: Search for flight
 	And user clicks on search submit button 
 	And search results are displayed 
 	When user is clicked on Book button for the first sugested flight 
-	Then the user is redirected to external KIWI provider 
+	Then the user is redirected to external provider 
+	
+Scenario: Click on flight discounted price link 
+	And user switches to flight search 
+	And user selects Leeds as ofigin 
+	And user selects Moscow as destination 
+	And user clicks on search submit button 
+	And search results are displayed 
+	When user is clicked on discounted price link 
+	Then the user is redirected to selected external provider 
 	
 	
 Scenario: Change currency 
