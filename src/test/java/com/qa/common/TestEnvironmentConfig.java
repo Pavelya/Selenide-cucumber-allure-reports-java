@@ -11,8 +11,20 @@ public class TestEnvironmentConfig {
         String googleUrl();
 
         String searchFormTitle();
-        
+
         String mainPage();
+
+        String mainLogoText();
+
+        String descritionText();
+
+        String copyrightSectionText();
+
+        String termsPage();
+
+        String privacyPolicyPage();
+
+        String cookiePolicyPage();
     }
 
     public static TestEnvConfig createTestEnvConfig() {
