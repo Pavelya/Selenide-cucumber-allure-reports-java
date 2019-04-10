@@ -14,9 +14,23 @@ public class FooterStepDefs {
         footer.footerSectionValidation();
         footer.copyrightSectionValidation();
         footer.termsLinksValidation();
+    }
+    
+    @Given("^cookie baner is displayed with valid content$")
+    public void cookieBannerValidation() throws Throwable {
         footer.validatePresenceOfCookieBanner(true);
+    }
+    
+    @Given("^user can close the cookie banner$")
+    public void closeCookieBanner() throws Throwable {
+        footer.closeCookieBannerIfExists();
+        footer.validatePresenceOfCookieBanner(false);
+    }
+    @Given("^user can launch terms and condition links$")
+    public void openTermsLinks() throws Throwable {
         footer.closeCookieBannerIfExists();
         footer.validatePresenceOfCookieBanner(false);
         footer.openTermsPage();
+        footer.openPrivacyPolicyPage();
     }
 }

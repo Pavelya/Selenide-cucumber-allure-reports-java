@@ -70,6 +70,9 @@ Background:
 #	
 Scenario: Footer validation 
 	Then footer is displayed with valid content 
+	And cookie baner is displayed with valid content
+	And user can close the cookie banner
+	And user can launch terms and condition links
 	
 #Scenario: Header validation 
 #	Then header is displayed with valid content

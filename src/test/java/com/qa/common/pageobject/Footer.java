@@ -102,5 +102,14 @@ public class Footer {
         assertTrue("Terms page is not launched", url().contains(testConf.termsPage()));
         switchTo().window(0);
     }
+    
+    public void openPrivacyPolicyPage() {
+        logger.info("Verify privacy policy page can be launched from footer");
+        ElementsCollection footerLinks = termsLinks.$$("a");
+        footerLinks.get(2).click();
+        switchTo().window(1);
+        assertTrue("Privacy policy is not launched", url().contains(testConf.privacyPolicyPage()));
+        switchTo().window(0);
+    }
 
 }
