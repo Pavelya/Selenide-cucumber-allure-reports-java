@@ -1,9 +1,11 @@
 package com.qa.common.pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.qa.common.TestEnvironmentConfig.TestEnvConfig;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +16,12 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.qa.common.TestEnvironmentConfig.createTestEnvConfig;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class SearchHotelsForm {
 
@@ -55,6 +62,20 @@ public class SearchHotelsForm {
 
     @FindBy(css = "span.search-results-title__total")
     protected SelenideElement searchResultsCounter;
+
+    @FindBy(css = "div.mewtwo-modal.mewtwo-modal--whitelabel_en")
+    protected SelenideElement datesCalendarSection;
+
+    @FindBy(css = "span.mewtwo-popup-ages-counter__plus")
+    protected ElementsCollection plusGuestButtons;
+
+    @FindBy(css = "span.mewtwo-popup-ages-counter__minus")
+    protected ElementsCollection minusGuestButtons;
+
+    @FindBy(css = "span.mewtwo-popup-ages-counter__amount")
+    protected ElementsCollection numberOfGuests;
+
+    protected String calendarDateSelectorBase = "td#mewtwo-datepicker-";
 
     public void searchFormTitleValidation() {
         logger.info("Check if search form tile is displayed");
@@ -97,6 +118,49 @@ public class SearchHotelsForm {
                 hotelSearchResults.get(0).getText().contains(cityName));
     }
 
+    public void clickOnCheckInBox() {
+        logger.info("Click on check in box");
+        checkInSelection.click();
+    }
+
+    public void clickOnCheckInDate() {
+        String date = getCurentDate();
+        logger.info("Select check in date: " + date);
+        SelenideElement currentDayInCalendar = $(calendarDateSelectorBase + date);
+        currentDayInCalendar.click();
+    }
+
+    public void clickOnCheckOutDate() {
+        String date = getCurentDatePlusOneWeek();
+        logger.info("Select check out date: " + date);
+        SelenideElement currentDayPlusWeekInCalendar = $(calendarDateSelectorBase + date);
+        currentDayPlusWeekInCalendar.click();
+    }
+
+    public void clickOnGuestsBox() {
+        logger.info("Click on guests box");
+        numberOfGuestsSelection.click();
+    }
+
+    public String getNumberOfGuests() {
+        String guests = numberOfGuests.get(0).getAttribute("innerHTML");
+        logger.info("Number of guests in the box: " + guests);
+        return guests;
+    }
+
+    public void increaseNumberOfGuests() {
+        String numberOfGuestsBeforeChange = getNumberOfGuests();
+        logger.info("Increase mumber of guests");
+        plusGuestButtons.get(0).click();
+        String numberOfGuestsAfterChange = getNumberOfGuests();
+        assertNotEquals("Number of guests was not changed", numberOfGuestsBeforeChange, numberOfGuestsAfterChange);
+    }
+
+    public void decreaseNumberOfGuests() {
+        logger.info("Decrease mumber of guests");
+        minusGuestButtons.get(0).click();
+    }
+
     public void clickOnFirstSearchResult() {
         logger.info("Click on first search result");
         hotelSearchResults.get(0).click();
@@ -111,6 +175,19 @@ public class SearchHotelsForm {
         logger.info("Validate search results");
         // TO DO: extent this test. For POC only checking that element is exists
         searchResultsCounter.waitUntil(visible, 30000);
+    }
+
+    public String getCurentDate() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-M-d");
+        return format1.format(cal.getTime());
+    }
+
+    public String getCurentDatePlusOneWeek() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 7);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-M-d");
+        return format1.format(cal.getTime());
     }
 
 }

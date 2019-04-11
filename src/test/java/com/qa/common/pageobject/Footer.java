@@ -38,18 +38,18 @@ public class Footer {
 
     @FindBy(css = "div.TPWL-footer-content__descrition")
     protected SelenideElement termsLinks;
-    
+
     @FindBy(css = "div.policy-bar.policy-bar--show")
     protected SelenideElement cookiePolicyBanner;
-    
+
     @FindBy(css = "p.policy-bar__text")
     protected SelenideElement cookiePolicyBannerText;
-    
+
     @FindBy(css = "button.policy-bar__close")
     protected SelenideElement cookiePolicyBannerCloseButton;
-    
+
     private boolean cookieBannerChecked = false;
-   
+
     public void footerSectionValidation() {
         logger.info("Verify footer is shown");
         footerDiv.shouldBe(visible);
@@ -70,7 +70,7 @@ public class Footer {
         assertEquals(footerLinks.get(1).getAttribute("href"), testConf.privacyPolicyPage());
         assertEquals(footerLinks.get(2).getAttribute("href"), testConf.cookiePolicyPage());
     }
-    
+
     public void closeCookieBannerIfExists() {
         if (!cookieBannerChecked) {
             try {
@@ -84,7 +84,7 @@ public class Footer {
             }
         }
     }
-    
+
     public void validatePresenceOfCookieBanner(boolean shouldBeVisible) {
         Condition expectedCondition = shouldBeVisible ? visible : hidden;
         cookiePolicyBanner.waitUntil(expectedCondition, 5000);
@@ -100,16 +100,5 @@ public class Footer {
         footerLinks.get(0).click();
         switchTo().window(1);
         assertTrue("Terms page is not launched", url().contains(testConf.termsPage()));
-        switchTo().window(0);
     }
-    
-    public void openPrivacyPolicyPage() {
-        logger.info("Verify privacy policy page can be launched from footer");
-        ElementsCollection footerLinks = termsLinks.$$("a");
-        footerLinks.get(2).click();
-        switchTo().window(1);
-        assertTrue("Privacy policy is not launched", url().contains(testConf.privacyPolicyPage()));
-        switchTo().window(0);
-    }
-
 }

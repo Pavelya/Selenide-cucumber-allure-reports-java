@@ -21,6 +21,10 @@ public class FooterStepDefs {
         footer.validatePresenceOfCookieBanner(true);
     }
     
+    @Given("^cookie baner is not displayed$")
+    public void cookieBannerValidationFalse() throws Throwable {
+        footer.validatePresenceOfCookieBanner(false);
+    }
     @Given("^user can close the cookie banner$")
     public void closeCookieBanner() throws Throwable {
         footer.closeCookieBannerIfExists();
@@ -31,6 +35,5 @@ public class FooterStepDefs {
         footer.closeCookieBannerIfExists();
         footer.validatePresenceOfCookieBanner(false);
         footer.openTermsPage();
-        footer.openPrivacyPolicyPage();
     }
 }

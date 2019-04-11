@@ -14,15 +14,15 @@ Background:
 #	And switcher between flighs and hotels is displayed 
 #	And search hotels form is displayed with valid content 
 #	
-#Scenario: Search for hotel 
-#	And user search for Moscow city in search hotels form 
-#	And user selects valid checkin date value 
-#	And user selects valid checkout date value 
-#	And user update number of guests 
-#	And user clicks on search submit button 
-#	Then search results are displayed 
-#	When user is clicked on Book button for the first sugested hotel 
-#	Then the user is redirected to external provider page 
+Scenario: Search for hotel 
+	And user search for Moscow city in search hotels form 
+	And user selects valid checkin date value 
+	And user selects valid checkout date value 
+	And user updates number of guests 
+	And user clicks on search submit button 
+	Then search results are displayed 
+	#When user is clicked on Book button for the first suggested hotel 
+	#Then the user is redirected to external provider page 
 #	
 #Scenario: Open hotel detailed page 
 #	And user search for Moscow city in search hotels form 
@@ -68,11 +68,12 @@ Background:
 #	And user changes the languge value to Russian 
 #	Then page is reloaded and new language value is set 
 #	
-Scenario: Footer validation 
-	Then footer is displayed with valid content 
-	And cookie baner is displayed with valid content
-	And user can close the cookie banner
-	And user can launch terms and condition links
+#Scenario: Footer validation 
+#	Then footer is displayed with valid content 
+#	And cookie baner is displayed with valid content
+#	And user can close the cookie banner
+#	And cookie baner is not displayed
+#	And user can launch terms and condition links
 	
 #Scenario: Header validation 
 #	Then header is displayed with valid content
