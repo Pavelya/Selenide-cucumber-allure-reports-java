@@ -75,6 +75,9 @@ public class SearchHotelsForm {
     @FindBy(css = "span.mewtwo-popup-ages-counter__amount")
     protected ElementsCollection numberOfGuests;
 
+    @FindBy(css = "div.main_gate-button")
+    protected ElementsCollection bookButton;
+
     protected String calendarDateSelectorBase = "td#mewtwo-datepicker-";
 
     public void searchFormTitleValidation() {
@@ -174,8 +177,10 @@ public class SearchHotelsForm {
 
     public void validateSearchResults() {
         logger.info("Validate search results");
-        // TO DO: extent this test. For POC only checking that element is exists
         searchResultsCounter.waitUntil(visible, 30000);
+        bookButton.get(0).waitUntil(visible, 30000);
+        bookButton.shouldHave(sizeGreaterThan(0));
+        logger.info(bookButton.size() + " results are loaded");
     }
 
     public String getCurentDate() {
