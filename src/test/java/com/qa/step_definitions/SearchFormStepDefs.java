@@ -48,8 +48,8 @@ public class SearchFormStepDefs {
     }
     
     @Given("^user updates number of guests")
-    public void selectCheckoutDate() throws Throwable {
-        searchForm.clickOnCheckOutDate();
+    public void increaseNumberOfGuests() throws Throwable {
+        searchForm.increaseNumberOfGuests();
     }
      
 

@@ -149,6 +149,7 @@ public class SearchHotelsForm {
     }
 
     public void increaseNumberOfGuests() {
+        clickOnGuestsBox();
         String numberOfGuestsBeforeChange = getNumberOfGuests();
         logger.info("Increase mumber of guests");
         plusGuestButtons.get(0).click();
