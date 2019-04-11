@@ -8,12 +8,12 @@ Feature: Verify core founctionality
 Background: 
 	Given user opens travelpayouts page 
 	
-	#Scenario: Search form content validation 
-	#	And search form title is displayed with valid content 
-	#	Then user settings dropdown is displayed 
-	#	And switcher between flighs and hotels is displayed 
-	#	And search hotels form is displayed with valid content 
-	#	
+Scenario: Search form content validation 
+	And search form title is displayed with valid content 
+	Then user settings dropdown is displayed 
+	And switcher between flighs and hotels is displayed 
+	And search hotels form is displayed with valid content 
+	
 Scenario: Search for hotel 
 	And user search for Moscow city in search hotels form 
 	And user selects valid checkin date value 
@@ -21,22 +21,22 @@ Scenario: Search for hotel
 	And user updates number of guests 
 	And user clicks on search submit button 
 	Then search results are displayed 
-	#When user is clicked on Book button for the first suggested hotel 
-	#Then the user is redirected to external provider page 
-	#	
-	#Scenario: Open hotel detailed page 
-	#	And user search for Moscow city in search hotels form 
-	#	And user clicks on search submit button 
-	#	Then search results are displayed 
-	#	When user is clicked on hotel name for the first sugested hotel 
-	#	Then the page with hotel details is displayed 
-	#	
-	#Scenario: Book hotel from selected provider 
-	#	And user search for Moscow city in search hotels form 
-	#	And user clicks on search submit button 
-	#	Then search results are displayed 
-	#	When user is clicked on external provider name for the first sugested hotel 
-	#	Then the user is redirected to selected external provider page 
+	And user clicks on Book button for the first suggested hotel 
+	Then  the user is redirected to partner page 
+	
+Scenario: Open hotel detailed page 
+	And  user search for Moscow city in search hotels form 
+	And  user clicks on search submit button 
+	Then  search results are displayed 
+	When  user clicks on hotel name for the first suggested hotel 
+	Then  the page with hotel details is displayed with valid content 
+	
+Scenario: Book hotel from selected provider 
+	And user search for Moscow city in search hotels form 
+	And user clicks on search submit button 
+	Then search results are displayed 
+	When user clicks on partner price link for the first suggested hotel 
+	Then the user is redirected to partner page 
 	#	
 	#Scenario: Search for flight 
 	#	And user switches to flight search 

@@ -1,12 +1,13 @@
 package com.qa.common.pageobject;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.qa.common.TestEnvironmentConfig.TestEnvConfig;
 
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
+import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -16,18 +17,18 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.qa.common.TestEnvironmentConfig.createTestEnvConfig;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class SearchHotelsForm {
+public class SearchHotel {
 
     WebDriverWait wait = new WebDriverWait(getWebDriver(), 5);
 
-    private static Logger logger = LoggerFactory.getLogger(SearchHotelsForm.class);
+    private static Logger logger = LoggerFactory.getLogger(SearchHotel.class);
     private TestEnvConfig testConf = createTestEnvConfig();
 
     @FindBy(css = "div.TPWL-header-content__label")
@@ -77,7 +78,10 @@ public class SearchHotelsForm {
 
     @FindBy(css = "div.main_gate-button")
     protected ElementsCollection bookButton;
-
+    
+    @FindBy(css = "a.card-gates_list-item-deeplink")
+    protected ElementsCollection partnerPrices;
+    
     protected String calendarDateSelectorBase = "td#mewtwo-datepicker-";
 
     public void searchFormTitleValidation() {
@@ -94,7 +98,6 @@ public class SearchHotelsForm {
     public void flightsHotelsSwitcherValidation() {
         logger.info("Check if switcher between flighs and hotels is displayed");
         flightsHotelsSwitcher.shouldBe(visible);
-        // TODO: add functionality of click. Not part of POC
     }
 
     public void validateSearchHotelForm() {
@@ -116,7 +119,7 @@ public class SearchHotelsForm {
         searchInput.setValue(cityName);
         logger.info("Verify that at least one result is returned");
         hotelSearchResults.shouldHave(sizeGreaterThan(0));
-        logger.info(hotelSearchResults.size() + " results were found");
+        logger.info(hotelSearchResults.size() + " results were found for city: "+cityName);
         assertTrue("Search results does not contains expected city",
                 hotelSearchResults.get(0).getText().contains(cityName));
     }
@@ -180,7 +183,26 @@ public class SearchHotelsForm {
         searchResultsCounter.waitUntil(visible, 30000);
         bookButton.get(0).waitUntil(visible, 30000);
         bookButton.shouldHave(sizeGreaterThan(0));
-        logger.info(bookButton.size() + " results are loaded");
+        logger.info(bookButton.size() + " hotels were found");
+    }
+
+    public void clickOnBookButton() {
+        logger.info("Click on Book button");
+        bookButton.get(0).click();
+    }
+    
+    public void clickOnPartnerPriceLink() {
+        logger.info("Click on partner price link");
+        partnerPrices.get(0).waitUntil(visible, 30000);
+        partnerPrices.get(0).click();
+    }
+
+    public void validateRedirectToPartnerSite() {
+        logger.info("Validate redirect to partner site");
+        // navigate to new tab
+        switchTo().window(1);
+        // wait up to one 30 sec for redirection to partner site
+        new WebDriverWait(getWebDriver(), 30, 200).until(urlContains(testConf.deepLinkToHotelPartner()));
     }
 
     public String getCurentDate() {
@@ -195,5 +217,4 @@ public class SearchHotelsForm {
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-M-d");
         return format1.format(cal.getTime());
     }
-
 }

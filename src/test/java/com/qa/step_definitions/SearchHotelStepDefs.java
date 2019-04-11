@@ -2,64 +2,80 @@ package com.qa.step_definitions;
 
 import static com.codeborne.selenide.Selenide.page;
 
-import com.qa.common.pageobject.SearchHotelsForm;
+import com.qa.common.pageobject.SearchHotel;
 
 import cucumber.api.java.en.Given;
 
-public class SearchFormStepDefs {
+public class SearchHotelStepDefs {
 
-    private SearchHotelsForm searchForm = page(SearchHotelsForm.class);
+    private SearchHotel searchHotel = page(SearchHotel.class);
 
     @Given("^search form title is displayed with valid content$")
     public void searchFormTitleValidation() throws Throwable {
-        searchForm.searchFormTitleValidation();
+        searchHotel.searchFormTitleValidation();
     }
 
     @Given("^user settings dropdown is displayed$")
     public void settingsDropdownValidation() throws Throwable {
-        searchForm.settingsDropdownValidation();
+        searchHotel.settingsDropdownValidation();
     }
 
     @Given("^switcher between flighs and hotels is displayed$")
     public void flightsHotelsSwitcherValidation() throws Throwable {
-        searchForm.flightsHotelsSwitcherValidation();
+        searchHotel.flightsHotelsSwitcherValidation();
     }
 
     @Given("^search hotels form is displayed with valid content$")
     public void validateSearchHotelForm() throws Throwable {
-        searchForm.validateSearchHotelForm();
+        searchHotel.validateSearchHotelForm();
     }
 
     @Given("^user search for (.*) city in search hotels form$")
     public void searchHotel(String cityName) throws Throwable {
-        searchForm.searchHotelByCityName(cityName);
-        searchForm.clickOnFirstSearchResult();
+        searchHotel.searchHotelByCityName(cityName);
+        searchHotel.clickOnFirstSearchResult();
     }
 
     @Given("^user selects valid checkin date value")
     public void selectCheckInDate() throws Throwable {
-        searchForm.clickOnCheckInBox();
-        searchForm.clickOnCheckInDate();
+        searchHotel.clickOnCheckInBox();
+        searchHotel.clickOnCheckInDate();
     }
 
     @Given("^user selects valid checkout date value")
     public void selectCheckoutDate() throws Throwable {
-        searchForm.clickOnCheckOutDate();
+        searchHotel.clickOnCheckOutDate();
     }
-    
+
     @Given("^user updates number of guests")
     public void increaseNumberOfGuests() throws Throwable {
-        searchForm.increaseNumberOfGuests();
+        searchHotel.increaseNumberOfGuests();
     }
-     
 
     @Given("^user clicks on search submit button")
     public void submitSearch() throws Throwable {
-        searchForm.submitSearch();
+        searchHotel.submitSearch();
     }
 
     @Given("^search results are displayed")
     public void validateSearchResults() throws Throwable {
-        searchForm.validateSearchResults();
+        searchHotel.validateSearchResults();
     }
+
+    @Given("^user clicks on Book button for the first suggested hotel")
+    public void clickOnBookButton() throws Throwable {
+        searchHotel.clickOnBookButton();
+    }
+    
+    @Given("^user clicks on partner price link for the first suggested hotel")
+    public void clickOnPartnerPriceLink() throws Throwable {
+        searchHotel.clickOnPartnerPriceLink();
+    }
+    
+
+    @Given("^the user is redirected to partner page")
+    public void validateRedirectToPartnerSite() throws Throwable {
+        searchHotel.validateRedirectToPartnerSite();
+    }
+
 }

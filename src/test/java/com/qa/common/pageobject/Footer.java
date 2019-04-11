@@ -9,8 +9,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-import java.net.URL;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -98,6 +96,7 @@ public class Footer {
         logger.info("Verify terms page can be launched from footer");
         ElementsCollection footerLinks = termsLinks.$$("a");
         footerLinks.get(0).click();
+        // navigate to new tab
         switchTo().window(1);
         assertTrue("Terms page is not launched", url().contains(testConf.termsPage()));
     }
