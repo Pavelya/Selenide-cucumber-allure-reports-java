@@ -202,7 +202,7 @@ public class SearchHotel {
         // navigate to new tab
         switchTo().window(1);
         // wait up to one 30 sec for redirection to partner site
-        new WebDriverWait(getWebDriver(), 30, 200).until(urlContains(testConf.deepLinkToHotelPartner()));
+        new WebDriverWait(getWebDriver(), 30, 20).until(urlContains(testConf.deepLinkToHotelPartner()));
     }
 
     public String getCurentDate() {
