@@ -10,7 +10,7 @@ public class SearchHotelStepDefs {
 
     private SearchHotel searchHotel = page(SearchHotel.class);
 
-    @Given("^search form title is displayed with valid content$")
+    @Given("^search hotel form title is displayed with valid content$")
     public void searchFormTitleValidation() throws Throwable {
         searchHotel.searchFormTitleValidation();
     }
@@ -52,12 +52,12 @@ public class SearchHotelStepDefs {
         searchHotel.increaseNumberOfGuests();
     }
 
-    @Given("^user clicks on search submit button")
+    @Given("^user clicks on hotel search submit button")
     public void submitSearch() throws Throwable {
         searchHotel.submitSearch();
     }
 
-    @Given("^search results are displayed")
+    @Given("^hotel search results are displayed")
     public void validateSearchResults() throws Throwable {
         searchHotel.validateSearchResults();
     }
