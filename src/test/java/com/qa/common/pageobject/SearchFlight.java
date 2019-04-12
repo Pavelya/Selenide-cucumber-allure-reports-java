@@ -8,6 +8,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -82,11 +83,16 @@ public class SearchFlight {
     @FindBy(css = "div.mewtwo-flights-submit_button")
     protected ElementsCollection searchButton;
 
-    @FindBy(css = "a.card-gates_list-item-deeplink")
-    protected ElementsCollection partnerPrices;
+//    @FindBy(css = "a.card-gates_list-item-deeplink")
+//    protected ElementsCollection partnerPrices;
     
-    @FindBy(css = " div.ticket-action-button.ticket-action-button--")
+    @FindBy(css = "div.ticket-action-button.ticket-action-button--")
     protected ElementsCollection flightBookButtons;
+    
+    @FindBy(className = "ticket-action-proposals-item-link")
+    protected ElementsCollection specialPriceLinks;
+    
+   
     
    
 
@@ -204,24 +210,31 @@ public class SearchFlight {
         flightBookButtons.shouldHave(sizeGreaterThan(0));
         logger.info(flightBookButtons.size() + " flights were found");
     }
-//
-//    public void clickOnBookButton() {
-//        logger.info("Click on Book button");
-//        bookButton.get(0).click();
-//    }
-    
-    public void clickOnPartnerPriceLink() {
-        logger.info("Click on partner price link");
-        partnerPrices.get(0).waitUntil(visible, 30000);
-        partnerPrices.get(0).click();
+
+    public void clickOnBookButton() {
+        logger.info("Click on book button for first located flight");
+        flightBookButtons.get(0).click();
     }
+    
+    public void clickOnSpecialPriceLink() throws InterruptedException {
+        logger.info("Click on special price button in flight details frame");
+        Thread.sleep(20000);
+        specialPriceLinks.get(0).click();
+    }
+    
+    
+//    public void clickOnPartnerPriceLink() {
+//        logger.info("Click on partner price link");
+//        partnerPrices.get(0).waitUntil(visible, 30000);
+//        partnerPrices.get(0).click();
+//    }
 
     public void validateRedirectToPartnerSite() {
         logger.info("Validate redirect to partner site");
         // navigate to new tab
         switchTo().window(1);
         // wait up to one 30 sec for redirection to partner site
-        new WebDriverWait(getWebDriver(), 30, 20).until(urlContains(testConf.deepLinkToHotelPartner()));
+        new WebDriverWait(getWebDriver(), 15, 10).until(urlContains(testConf.searchLinkToFlightPartner()));
     }
 
     public String getCurentDate() {

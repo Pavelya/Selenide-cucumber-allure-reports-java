@@ -52,18 +52,32 @@ public class SearchFlightStepDefs {
 
     @Given("^user updates number of passengers$")
     public void updatePassengers() throws Throwable {
-        searchFlight.clickOnPassengerBox();
         searchFlight.increaseNumberOfPassengers();
     }
-    
+
     @Given("^user clicks on flight search submit button")
     public void submitSearch() throws Throwable {
         searchFlight.submitSearch();
     }
-    
+
     @Given("^flight search results are displayed")
     public void validateSearchResults() throws Throwable {
         searchFlight.validateSearchResults();
+    }
+
+    @Given("^user is clicked on Book button for the first suggested flight")
+    public void clickOnBookButton() throws Throwable {
+        searchFlight.clickOnBookButton();
+    }
+
+    @Given("^the user is redirected to external provider")
+    public void validateRedirectToPartnerSite() throws Throwable {
+        searchFlight.validateRedirectToPartnerSite();
+    }
+
+    @Given("^user is clicked on discounted price link")
+    public void clickOnSpecialPriceLink() throws Throwable {
+        searchFlight.clickOnSpecialPriceLink();
     }
 
 }

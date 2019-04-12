@@ -46,26 +46,28 @@ Background:
 	#	And search flight form is displayed with valid content 
 	
 	
-Scenario: Search for flight 
+#Scenario: Search for flight 
+#	And user clicks of flight switch selector 
+#	And user selects Paris as origin 
+#	And user selects Moscow as destination 
+#	And user selects valid departure date value 
+#	And user selects valid return date value 
+#	And user updates number of passengers 
+#	And user clicks on flight search submit button 
+#	And flight search results are displayed 
+#	When user is clicked on Book button for the first suggested flight 
+#	Then the user is redirected to external provider 
+	
+Scenario: Click on flight discounted price link 
 	And user clicks of flight switch selector 
 	And user selects Paris as origin 
 	And user selects Moscow as destination 
 	And user selects valid departure date value 
 	And user selects valid return date value 
-	And user updates number of passengers 
 	And user clicks on flight search submit button 
 	And flight search results are displayed 
-	#	When user is clicked on Book button for the first sugested flight 
-	#	Then the user is redirected to external provider 
-	#	
-	#Scenario: Click on flight discounted price link 
-	#	And user switches to flight search 
-	#	And user selects Leeds as ofigin 
-	#	And user selects Moscow as destination 
-	#	And user clicks on search submit button 
-	#	And search results are displayed 
-	#	When user is clicked on discounted price link 
-	#	Then the user is redirected to selected external provider 
+	When user is clicked on discounted price link 
+	Then the user is redirected to external provider
 	#	
 	#	
 	#Scenario: Change currency 

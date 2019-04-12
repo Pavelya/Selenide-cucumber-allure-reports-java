@@ -27,6 +27,8 @@ public class TestEnvironmentConfig {
         String cookiePolicyPage();
 
         String deepLinkToHotelPartner();
+
+        String searchLinkToFlightPartner();
     }
 
     public static TestEnvConfig createTestEnvConfig() {
