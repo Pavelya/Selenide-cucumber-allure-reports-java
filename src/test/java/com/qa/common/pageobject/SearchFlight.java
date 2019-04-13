@@ -89,7 +89,7 @@ public class SearchFlight {
     @FindBy(css = "div.ticket-action-button.ticket-action-button--")
     protected ElementsCollection flightBookButtons;
     
-    @FindBy(className = "ticket-action-proposals-item-link")
+    @FindBy(className = "div.ticket-action__container")
     protected ElementsCollection specialPriceLinks;
     
    
@@ -218,8 +218,11 @@ public class SearchFlight {
     
     public void clickOnSpecialPriceLink() throws InterruptedException {
         logger.info("Click on special price button in flight details frame");
-        Thread.sleep(20000);
-        specialPriceLinks.get(0).click();
+        //$(By.partialLinkText("pedia")).click();
+        //specialPriceLinks.get(0).waitUntil(visible, 30000);
+        //System.out.println("!!!! "+specialPriceLinks.size());
+        $("ul.ticket-action-proposals-list.ticket-action-proposals-list--collapsed.ticket-action-proposals-list--").click();
+        //specialPriceLinks.get(0).click();
     }
     
     
