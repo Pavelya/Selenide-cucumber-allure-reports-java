@@ -1,6 +1,10 @@
 package com.qa.step_definitions;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.WebDriverRunner.url;
+import static org.junit.Assert.assertNotEquals;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,5 +24,14 @@ public class CommonNavigationStepDefs {
         String mainPage = testConf.mainPage();
         logger.info("Open main page: " + mainPage);
         open(mainPage);
+    }
+    
+    @Given("^the user is redirected to partner page")
+    public void validateRedirectToPartnerSite() throws Throwable {
+        logger.info("Validate redirect to partner site");
+        // navigate to new tab
+        switchTo().window(1);
+        logger.info("User is on: " + url() + " site");
+        assertNotEquals("User is not redirected to external provider site", url(), testConf.mainPage());
     }
 }

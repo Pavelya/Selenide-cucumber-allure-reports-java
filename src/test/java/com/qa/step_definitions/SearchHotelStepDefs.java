@@ -71,9 +71,4 @@ public class SearchHotelStepDefs {
     public void clickOnPartnerPriceLink() throws Throwable {
         searchHotel.clickOnPartnerPriceLink();
     }
-
-    @Given("^the user is redirected to partner page")
-    public void validateRedirectToPartnerSite() throws Throwable {
-        searchHotel.validateRedirectToPartnerSite();
-    }
 }

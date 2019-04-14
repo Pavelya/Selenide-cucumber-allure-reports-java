@@ -53,7 +53,7 @@ Scenario: Search for flight
 	And user clicks on flight search submit button 
 	And flight search results are displayed 
 	When user is clicked on Book button for the first suggested flight 
-	Then the user is redirected to external provider 
+	Then the user is redirected to partner page 
 	
 Scenario: Click on flight discounted price link 
 	When user clicks of flight switch selector 

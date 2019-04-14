@@ -6,8 +6,6 @@ import com.qa.common.TestEnvironmentConfig.TestEnvConfig;
 
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
-import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -19,8 +17,6 @@ import static com.qa.common.TestEnvironmentConfig.createTestEnvConfig;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.switchTo;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -199,14 +195,6 @@ public class SearchHotel {
         logger.info("Click on partner price link");
         partnerPrices.get(0).waitUntil(visible, 30000);
         partnerPrices.get(0).click();
-    }
-
-    public void validateRedirectToPartnerSite() {
-        logger.info("Validate redirect to partner site");
-        // navigate to new tab
-        switchTo().window(1);
-        // wait up to one 30 sec for redirection to partner site
-        new WebDriverWait(getWebDriver(), 30, 20).until(urlContains(testConf.deepLinkToHotelPartner()));
     }
 
     public String getCurentDate() {

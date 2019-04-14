@@ -62,11 +62,6 @@ public class SearchFlightStepDefs {
         searchFlight.clickOnBookButton();
     }
 
-    @Given("^the user is redirected to external provider")
-    public void validateRedirectToPartnerSite() throws Throwable {
-        searchFlight.validateRedirectToPartnerSite();
-    }
-
     @Given("^user can click on discounted price link")
     public void clickOnSpecialPriceLink() throws Throwable {
         searchFlight.clickOnSpecialPriceLink();
