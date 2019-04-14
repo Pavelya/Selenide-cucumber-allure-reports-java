@@ -10,7 +10,7 @@ public class SearchHotelStepDefs {
 
     private SearchHotel searchHotel = page(SearchHotel.class);
 
-    @Given("^search hotel form title is displayed with valid content$")
+    @Given("^title is displayed with valid content$")
     public void searchFormTitleValidation() throws Throwable {
         searchHotel.searchFormTitleValidation();
     }
@@ -20,7 +20,7 @@ public class SearchHotelStepDefs {
         searchHotel.settingsDropdownValidation();
     }
 
-    @Given("^switcher between flighs and hotels is displayed$")
+    @Given("^switcher between flights and hotels is displayed$")
     public void flightsHotelsSwitcherValidation() throws Throwable {
         searchHotel.flightsHotelsSwitcherValidation();
     }
@@ -66,16 +66,14 @@ public class SearchHotelStepDefs {
     public void clickOnBookButton() throws Throwable {
         searchHotel.clickOnBookButton();
     }
-    
+
     @Given("^user clicks on partner price link for the first suggested hotel")
     public void clickOnPartnerPriceLink() throws Throwable {
         searchHotel.clickOnPartnerPriceLink();
     }
-    
 
     @Given("^the user is redirected to partner page")
     public void validateRedirectToPartnerSite() throws Throwable {
         searchHotel.validateRedirectToPartnerSite();
     }
-
 }

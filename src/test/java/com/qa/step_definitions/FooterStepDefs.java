@@ -16,12 +16,12 @@ public class FooterStepDefs {
         footer.termsLinksValidation();
     }
     
-    @Given("^cookie baner is displayed with valid content$")
+    @Given("^cookie banner is displayed with valid content$")
     public void cookieBannerValidation() throws Throwable {
         footer.validatePresenceOfCookieBanner(true);
     }
     
-    @Given("^cookie baner is not displayed$")
+    @Given("^cookie banner is not displayed$")
     public void cookieBannerValidationFalse() throws Throwable {
         footer.validatePresenceOfCookieBanner(false);
     }

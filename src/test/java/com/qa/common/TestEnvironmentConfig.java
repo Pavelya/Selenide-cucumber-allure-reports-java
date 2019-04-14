@@ -29,6 +29,8 @@ public class TestEnvironmentConfig {
         String deepLinkToHotelPartner();
 
         String searchLinkToFlightPartner();
+
+        String searchResultsLoader();
     }
 
     public static TestEnvConfig createTestEnvConfig() {

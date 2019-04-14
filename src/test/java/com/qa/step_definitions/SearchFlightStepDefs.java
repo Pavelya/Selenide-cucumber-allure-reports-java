@@ -3,19 +3,11 @@ package com.qa.step_definitions;
 import static com.codeborne.selenide.Selenide.page;
 
 import com.qa.common.pageobject.SearchFlight;
-import com.qa.common.pageobject.SearchHotel;
-
 import cucumber.api.java.en.Given;
 
 public class SearchFlightStepDefs {
 
     private SearchFlight searchFlight = page(SearchFlight.class);
-
-    @Given("^search flight form title is displayed with valid content$")
-    public void searchFormTitleValidation() throws Throwable {
-        searchFlight.searchFormTitleValidation();
-
-    }
 
     @Given("^search flight form is displayed with valid content$")
     public void validateSearchFlightForm() throws Throwable {
@@ -75,9 +67,8 @@ public class SearchFlightStepDefs {
         searchFlight.validateRedirectToPartnerSite();
     }
 
-    @Given("^user is clicked on discounted price link")
+    @Given("^user can click on discounted price link")
     public void clickOnSpecialPriceLink() throws Throwable {
         searchFlight.clickOnSpecialPriceLink();
     }
-
 }

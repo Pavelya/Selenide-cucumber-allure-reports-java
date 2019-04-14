@@ -4,17 +4,13 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.Selenide.switchTo;
 
 public class HotelDetails {
-
-    WebDriverWait wait = new WebDriverWait(getWebDriver(), 5);
 
     private static Logger logger = LoggerFactory.getLogger(HotelDetails.class);
     @FindBy(css = "address.hotel_page-address")

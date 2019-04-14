@@ -17,17 +17,16 @@ public interface MainConfig extends Config {
     String bs_build();
 
     String bs_debug();
-    
+
     String bs_hub();
 
     String allure_results_folder();
 
     String allure_screenshots_folder();
-    
-    String bs_devices_config();
-    
-    String bs_api();
-    
-    String bs_automation();
 
+    String bs_devices_config();
+
+    String bs_api();
+
+    String bs_automation();
 }

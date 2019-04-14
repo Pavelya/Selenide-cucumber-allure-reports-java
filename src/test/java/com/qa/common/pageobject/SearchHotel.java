@@ -78,31 +78,35 @@ public class SearchHotel {
 
     @FindBy(css = "div.main_gate-button")
     protected ElementsCollection bookButton;
-    
+
     @FindBy(css = "a.card-gates_list-item-deeplink")
     protected ElementsCollection partnerPrices;
-    
+
     protected String calendarDateSelectorBase = "td#mewtwo-datepicker-";
 
     public void searchFormTitleValidation() {
         logger.info("Check if search form tile is displayed");
         logger.info("Check if search form tile content is valid");
+        searchFormTitle.waitUntil(visible, 30000);
         searchFormTitle.shouldBe(visible).shouldHave(text(testConf.searchFormTitle()));
     }
 
     public void settingsDropdownValidation() {
         logger.info("Check if settings dropdown element is dispalyed");
+        settingsDropdown.waitUntil(visible, 30000);
         settingsDropdown.shouldBe(visible);
     }
 
     public void flightsHotelsSwitcherValidation() {
         logger.info("Check if switcher between flighs and hotels is displayed");
+        flightsHotelsSwitcher.waitUntil(visible, 30000);
         flightsHotelsSwitcher.shouldBe(visible);
     }
 
     public void validateSearchHotelForm() {
         logger.info("Check if search hotels form is displayed by default");
         logger.info("Validate search hotels form content");
+        searchConteiner.waitUntil(visible, 30000);
         searchConteiner.shouldBe(visible);
         searchInput.shouldBe(visible);
         checkInSelection.shouldBe(visible);
@@ -119,7 +123,7 @@ public class SearchHotel {
         searchInput.setValue(cityName);
         logger.info("Verify that at least one result is returned");
         hotelSearchResults.shouldHave(sizeGreaterThan(0));
-        logger.info(hotelSearchResults.size() + " results were found for city: "+cityName);
+        logger.info(hotelSearchResults.size() + " results were found for city: " + cityName);
         assertTrue("Search results does not contains expected city",
                 hotelSearchResults.get(0).getText().contains(cityName));
     }
@@ -190,7 +194,7 @@ public class SearchHotel {
         logger.info("Click on Book button");
         bookButton.get(0).click();
     }
-    
+
     public void clickOnPartnerPriceLink() {
         logger.info("Click on partner price link");
         partnerPrices.get(0).waitUntil(visible, 30000);

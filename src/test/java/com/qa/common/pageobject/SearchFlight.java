@@ -5,20 +5,17 @@ import com.codeborne.selenide.SelenideElement;
 import com.qa.common.TestEnvironmentConfig.TestEnvConfig;
 
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.url;
 import static com.qa.common.TestEnvironmentConfig.createTestEnvConfig;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 
@@ -27,19 +24,16 @@ import java.util.Calendar;
 
 public class SearchFlight {
 
-    WebDriverWait wait = new WebDriverWait(getWebDriver(), 5);
+    WebDriverWait wait = new WebDriverWait(getWebDriver(), 60);
 
     private static Logger logger = LoggerFactory.getLogger(SearchFlight.class);
     private TestEnvConfig testConf = createTestEnvConfig();
 
+    @FindBy(css = "div.ie-fixMinHeight")
+    protected SelenideElement mainPageDiv;
+
     @FindBy(css = "li.mewtwo-tabs-tabs_list__item.mewtwo-tabs-tabs_list__item--count2.mewtwo-tabs-tabs_list__item--flights")
     protected SelenideElement flightsSwitchSelector;
-
-    @FindBy(css = "div.TPWL-header-content__label")
-    protected SelenideElement searchFormTitle;
-
-    @FindBy(css = "div.user-settings-informer")
-    protected SelenideElement settingsDropdown;
 
     @FindBy(css = "ul.mewtwo-tabs_list")
     protected SelenideElement flightsHotelsSwitcher;
@@ -83,40 +77,17 @@ public class SearchFlight {
     @FindBy(css = "div.mewtwo-flights-submit_button")
     protected ElementsCollection searchButton;
 
-//    @FindBy(css = "a.card-gates_list-item-deeplink")
-//    protected ElementsCollection partnerPrices;
-    
     @FindBy(css = "div.ticket-action-button.ticket-action-button--")
     protected ElementsCollection flightBookButtons;
-    
-    @FindBy(className = "div.ticket-action__container")
+
+    @FindBy(css = "li.ticket-action-proposals-item")
     protected ElementsCollection specialPriceLinks;
-    
-   
-    
-   
 
     protected String calendarDateSelectorBase = "td#mewtwo-datepicker-DATE_PLACEHOLDER.mewtwo-datepicker-current-date.mewtwo-datepicker-current";
 
     public void clickOnFlightSwitch() {
         logger.info("Click on flights switch selector");
         flightsSwitchSelector.click();
-    }
-
-    public void searchFormTitleValidation() {
-        logger.info("Check if search form tile is displayed");
-        logger.info("Check if search form tile content is valid");
-        searchFormTitle.shouldBe(visible).shouldHave(text(testConf.searchFormTitle()));
-    }
-
-    public void settingsDropdownValidation() {
-        logger.info("Check if settings dropdown element is dispalyed");
-        settingsDropdown.shouldBe(visible);
-    }
-
-    public void flightsHotelsSwitcherValidation() {
-        logger.info("Check if switcher between flighs and hotels is displayed");
-        flightsHotelsSwitcher.shouldBe(visible);
     }
 
     public void validateSearchFlightForm() {
@@ -128,7 +99,6 @@ public class SearchFlight {
         departDateSelection.shouldBe(visible);
         numberOfPassengerselection.shouldBe(visible);
         searchSubmit.shouldBe(visible);
-
     }
 
     public void searchOriginByCityName(String cityName) {
@@ -185,7 +155,8 @@ public class SearchFlight {
         logger.info("Increase mumber of passengers");
         plusGuestButtons.get(0).click();
         String numberOfPassengeresAfterChange = getNumberOfPassengeres();
-        assertNotEquals("Number of Passengeres was not changed", numberOfPassengeresBeforeChange, numberOfPassengeresAfterChange);
+        assertNotEquals("Number of Passengeres was not changed", numberOfPassengeresBeforeChange,
+                numberOfPassengeresAfterChange);
     }
 
     public void clickOnFirstOriginSearchResult() {
@@ -201,6 +172,9 @@ public class SearchFlight {
     public void submitSearch() {
         logger.info("Click on submit search");
         searchSubmit.click();
+        logger.info("Wait till search will be completed");
+        wait.until(ExpectedConditions
+                .not(ExpectedConditions.textToBePresentInElement(mainPageDiv, testConf.searchResultsLoader())));
     }
 
     public void validateSearchResults() {
@@ -215,29 +189,30 @@ public class SearchFlight {
         logger.info("Click on book button for first located flight");
         flightBookButtons.get(0).click();
     }
-    
+
     public void clickOnSpecialPriceLink() throws InterruptedException {
         logger.info("Click on special price button in flight details frame");
-        //$(By.partialLinkText("pedia")).click();
-        //specialPriceLinks.get(0).waitUntil(visible, 30000);
-        //System.out.println("!!!! "+specialPriceLinks.size());
-        $("ul.ticket-action-proposals-list.ticket-action-proposals-list--collapsed.ticket-action-proposals-list--").click();
-        //specialPriceLinks.get(0).click();
+        if (specialPriceLinks.size() > 0) {
+            logger.info(specialPriceLinks.size() + " special price flights were found");
+            for (int i = 0; i < specialPriceLinks.size(); i++) {
+                // click if special price link element is visible
+                if (specialPriceLinks.get(i).is(visible)) {
+                    specialPriceLinks.get(i).click();
+                    validateRedirectToPartnerSite();
+                    break;
+                }
+            }
+        } else {
+            logger.info("No special price links found");
+        }
     }
-    
-    
-//    public void clickOnPartnerPriceLink() {
-//        logger.info("Click on partner price link");
-//        partnerPrices.get(0).waitUntil(visible, 30000);
-//        partnerPrices.get(0).click();
-//    }
 
     public void validateRedirectToPartnerSite() {
         logger.info("Validate redirect to partner site");
         // navigate to new tab
         switchTo().window(1);
-        // wait up to one 30 sec for redirection to partner site
-        new WebDriverWait(getWebDriver(), 15, 10).until(urlContains(testConf.searchLinkToFlightPartner()));
+        logger.info("User is on: " + url() + " site");
+        assertNotEquals("User is not redirected to external provider site", url(), testConf.mainPage());
     }
 
     public String getCurentDate() {
