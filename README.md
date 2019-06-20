@@ -74,5 +74,3 @@ Huge kudos to wonderful software that allowed to create this project:
 [![Allure](https://avatars3.githubusercontent.com/u/5879127?s=200&v=4)](https://github.com/allure-framework/allure2)  
 [![Cucumber](https://raw.githubusercontent.com/cucumber-ltd/brand/master/images/png/notm/cucumber-black/cucumber-black-128.png)](https://cucumber.io/)
 [![Maven](https://maven.apache.org/images/maven-logo-black-on-white.png)](https://maven.apache.org/)
-
-TEST
