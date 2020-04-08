@@ -1,6 +1,7 @@
-# QA Panda
+# Selenide-cucumber-allure-reports-java
 
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)](https://www.browserstack.com/automate/public-build/TmU1WVRVcGFRV29YaGRJWEtXNHVrdW1Yc2k0WngwT0VGOEprSFk4VnVTYz0tLWFabkxOOHFRMnhQSmRwNDhhMjd3dVE9PQ==--5fc341d0f2eb2e4c20c4ef158935c7325662a9ac)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
 
 
 Automation Testing using BrowserStack, Selenide API, Cucumber and Allure reports
@@ -27,6 +28,15 @@ cd to project path
 mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
   
 mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
+
+Parameters usage
+
+| Variable   | Description                    | Example    | Default   |
+| ---------- | ------------------------------ | -----------| --------- |
+| useBS      | Launch test using BrowserStack | `true`     | `false`   |
+| bs_local   | Use BrowsserStack local config | `true`     | `true`    |  
+| device     | Specify BrowserStack device    | `iPhone_XS`|  N/A      |
+| env        | Environment config to be used  | `dev`      | `prod`    |
 
 Running the tests - from IDE  
 -------------------
