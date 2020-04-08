@@ -25,7 +25,6 @@ import java.util.Map;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.qa.common.Browserstack.start;
 import static com.qa.common.Browserstack.takeDown;
-import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 
 import com.qa.common.MainConfig;
@@ -42,7 +41,7 @@ public class Hooks {
 
     @Before
     public void before(Scenario scenario) throws Exception {
-        logger.info("Scenario: " + scenario.getName() + " started");
+        logger.info("Scenario: " + scenario.getName() + " has been started");
         tagFlags.put("desktopTest", scenario.getSourceTagNames().contains(DESKTOP_TAG));
         tagFlags.put("mobileTest", scenario.getSourceTagNames().contains(MOBILE_TAG));
 
@@ -59,10 +58,8 @@ public class Hooks {
 
         if (runOnBrowserStack()) {
             takeDown(scenario);
-        } else {
-            close();
         }
-        logger.info("Scenario: " + scenario.getName() + " finished");
+        logger.info("Scenario: " + scenario.getName() + " has been finished");
     }
 
     private void takeSnapshot(Scenario scenario) {

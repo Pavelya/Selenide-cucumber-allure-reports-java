@@ -18,13 +18,15 @@ Prerequisites
 
 How to install this project
 -------------
-git clone https://github.com/Pavelya/QA-Panda  
+git clone https://github.com/Pavelya/Selenide-cucumber-allure-reports-java.git  
 
 Running the tests - command line mode
 -------------------
 cd to project path  
 
-mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=true -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
+  
+mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
 
 Running the tests - from IDE  
 -------------------
