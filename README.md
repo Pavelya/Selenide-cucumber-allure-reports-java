@@ -1,13 +1,11 @@
 # Selenide-cucumber-allure-reports-java
 
+<form>
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/pavelya/Selenide-cucumber-allure-reports-java?style=for-the-badge">
-
 <img alt="GitHub" src="https://img.shields.io/github/license/pavelya/Selenide-cucumber-allure-reports-java?style=for-the-badge">
-
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/pavelya?style=for-the-badge">
-
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/pavelya/Selenide-cucumber-allure-reports-java?style=for-the-badge">
-
+</form>
 
 Automation Testing using BrowserStack, Selenide API, Cucumber and Allure reports
 
@@ -24,16 +22,21 @@ Prerequisites
 
 How to install this project
 -------------
+
+```bash
 git clone https://github.com/Pavelya/Selenide-cucumber-allure-reports-java.git  
 
+```
 Running the tests - command line mode
 -------------------
-cd to project path  
-
+```bash
+cd to project path   
+  
 mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
   
-mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
+mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
+```
 Parameters usage
 
 | Variable   | Description                    | Example    | Default   |
@@ -45,7 +48,11 @@ Parameters usage
 
 Running the tests - from IDE  
 -------------------
+```bash
 Run [src/test/java/com/qa/automation/BaseTest.java](src/test/java/com/qa/automation/BaseTest.java)  as maven test
+
+```
+
 
 
 Documentation
