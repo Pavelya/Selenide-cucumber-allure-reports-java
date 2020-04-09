@@ -25,7 +25,6 @@ import java.util.Map;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.qa.common.Browserstack.start;
 import static com.qa.common.Browserstack.takeDown;
-import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 
 import com.qa.common.MainConfig;
@@ -59,8 +58,6 @@ public class Hooks {
 
         if (runOnBrowserStack()) {
             takeDown(scenario);
-        } else {
-            close();
         }
         logger.info("Scenario: " + scenario.getName() + " finished");
     }

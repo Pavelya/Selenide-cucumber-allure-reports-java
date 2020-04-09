@@ -22,8 +22,6 @@ public class BaseTest{
 
     @BeforeClass
     static public void beforeSuite() {
-
-        // prepare reports folder
         prepareAllureResultsFolder();
     }
 
