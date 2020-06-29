@@ -31,10 +31,15 @@ Running the tests - command line mode
 -------------------
 ```bash
 cd to project path   
-  
+
+Run with BrowserStack  
 mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X_Mojave_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
   
+Run locally with headless browser   
 mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
+
+Run Locally with UI 
+mvn clean install test -U -Dheadless=false "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 ```
 Parameters usage
@@ -45,6 +50,7 @@ Parameters usage
 | bs_local   | Use BrowsserStack local config | `true`     | `true`    |  
 | device     | Specify BrowserStack device    | `iPhone_XS`|  N/A      |
 | env        | Environment config to be used  | `dev`      | `prod`    |
+| headless   | Use headless mode              | `true`     | `true`    |
 
 Running the tests - from IDE  
 -------------------
@@ -52,8 +58,6 @@ Running the tests - from IDE
 Run [src/test/java/com/qa/automation/BaseTest.java](src/test/java/com/qa/automation/BaseTest.java)  as maven test
 
 ```
-
-
 
 Documentation
 -------------

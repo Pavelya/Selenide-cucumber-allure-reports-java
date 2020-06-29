@@ -52,7 +52,7 @@ public class Browserstack {
         logger.info("Scenario: " + scenario.getName() + " started");
 
         String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + HUB_URL;
-        
+
         if (isDesktop()) {
             caps.setCapability("os", deviceConf.os());
             caps.setCapability("os_version", deviceConf.os_version());
@@ -99,7 +99,7 @@ public class Browserstack {
     private static boolean bsLocal() {
         return System.getProperty("bs_local", "true").contains("true") ? true : false;
     }
-    
+
     private static boolean isDesktop() {
         String device = System.getProperty("device").toLowerCase();
         return (device.contains("windows") || device.contains("os_x")) ? true : false;

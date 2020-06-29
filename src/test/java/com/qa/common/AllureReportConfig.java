@@ -7,8 +7,8 @@ import org.aeonbits.owner.ConfigFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AllureReportConfig{
-    
+public class AllureReportConfig {
+
     protected static Logger logger = LoggerFactory.getLogger(AllureReportConfig.class);
     protected static MainConfig config = ConfigFactory.create(MainConfig.class);
 
@@ -87,7 +87,6 @@ public class AllureReportConfig{
     }
 
     public static void createReportFolder(File allureResultsFolder) throws IOException {
-
         if (!allureResultsFolder.exists()) {
             if (allureResultsFolder.mkdir()) {
                 logger.info("Directory is created: " + allureResultsFolder);

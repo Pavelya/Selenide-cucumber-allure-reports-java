@@ -23,6 +23,7 @@ public class BaseTest{
     @BeforeClass
     static public void beforeSuite() {
         prepareAllureResultsFolder();
+        System.setProperty("selenide.headless", System.getProperty("headless", "true"));
     }
 
     @AfterClass
