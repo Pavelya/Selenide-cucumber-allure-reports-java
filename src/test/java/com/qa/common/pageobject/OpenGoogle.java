@@ -39,7 +39,7 @@ public class OpenGoogle {
 
 
     public void verifyExpectedUrl() {
-        assertEquals(url(), testConf.expectedUrl());
+        assertTrue(url().contains("Pavelya"));
     }
 
 }
