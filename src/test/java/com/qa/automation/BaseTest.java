@@ -24,6 +24,7 @@ public class BaseTest{
     static public void beforeSuite() {
         prepareAllureResultsFolder();
         System.setProperty("selenide.headless", System.getProperty("headless", "true"));
+        System.setProperty("selenide.baseUrl", System.getProperty("baseUrl", "https://google.com"));
     }
 
     @AfterClass

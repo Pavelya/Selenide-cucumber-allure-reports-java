@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.qa.automation</groupId>
-	<artifactId>test-app</artifactId>
-	<version>2.3</version>
+	<artifactId>test-automation</artifactId>
+	<version>2.5</version>
 
-	<name>test-app</name>
-	<url>https://pavelya.github.io/QA-Panda/</url>
+	<name>test-automation</name>
+	<url>https://github.com/Pavelya/Selenide-cucumber-allure-reports-java</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,9 +20,9 @@
 		<cucumber-junit.version>1.2.6</cucumber-junit.version>
 		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 		<rest-assured.version>4.3.0</rest-assured.version>
-		<selenide.version>5.12.2</selenide.version>
+		<selenide.version>5.13.0</selenide.version>
 		<slf4j.version>1.7.30</slf4j.version>
-		<allure-cucumber-jvm.version>2.9.0</allure-cucumber-jvm.version>
+		<allure-cucumber-jvm.version>2.13.5</allure-cucumber-jvm.version>
 		<owner-api.version>1.0.10</owner-api.version>
 		<junit.version>4.13</junit.version>
 		<browser-stack-local.version>1.0.3</browser-stack-local.version>
