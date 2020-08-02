@@ -41,7 +41,7 @@ mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.
 Run locally with UI 
 mvn clean install test -U -Dheadless=false "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
-Run lovally with mobile emulaiton
+Run locally with mobile emulaiton
 mvn clean install test -U -Dheadless=false -DmobileLocal=true "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 ```
