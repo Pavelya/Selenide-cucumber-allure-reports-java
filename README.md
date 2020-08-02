@@ -38,19 +38,23 @@ mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X
 Run locally with headless browser   
 mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
-Run Locally with UI 
+Run locally with UI 
 mvn clean install test -U -Dheadless=false "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
+
+Run lovally with mobile emulaiton
+mvn clean install test -U -Dheadless=false -DmobileLocal=true "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 ```
 Parameters usage
 
-| Variable   | Description                    | Example    | Default   |
-| ---------- | ------------------------------ | -----------| --------- |
-| useBS      | Launch test using BrowserStack | `true`     | `false`   |
-| bs_local   | Use BrowsserStack local config | `true`     | `true`    |  
-| device     | Specify BrowserStack device    | `iPhone_XS`|  N/A      |
-| env        | Environment config to be used  | `dev`      | `prod`    |
-| headless   | Use headless mode              | `true`     | `true`    |
+| Variable    | Description                    | Example    | Default   |
+| ----------  | ------------------------------ | -----------| --------- |
+| useBS       | Launch test using BrowserStack | `true`     | `false`   |
+| bs_local    | Use BrowsserStack local config | `true`     | `true`    |  
+| device      | Specify BrowserStack device    | `iPhone_XS`|  N/A      |
+| env         | Environment config to be used  | `dev`      | `prod`    |
+| headless    | Use headless mode              | `true`     | `true`    |
+| mobileLocal | Use mobile emulation           | `true`     | `false`   |
 
 Running the tests - from IDE  
 -------------------

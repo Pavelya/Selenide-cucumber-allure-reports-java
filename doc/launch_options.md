@@ -5,6 +5,7 @@
 	Following options are avalible for browser launch:  
 	1. Use local browser, created by Selenide  
 	2. Use browserstack devices    
+	3. Generate mobile emulation
 
 ##### LOCAL BROWSER:  
   
@@ -47,6 +48,12 @@ _src/test/resources/MainConfig.properties_
 	bs_key=test  
 	Should be replaced with actual BS account values 
 	
+	
+##### MOBULE EMULATION SETUP:  
+Goal: launch tests locally using mobile emulation
+Usage: pass ...-DmobileLocal=true...  param  
+To set the mobile device type update mobileEmulationDevice key in: _src/test/resources/MainConfig.properties_
+
 
 		   
 	

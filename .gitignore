@@ -39,3 +39,7 @@ Thumbs.db
 /allure-report/
 /target/
 /allure-screenshots/
+
+# Custom browsers
+#####################
+/src/test/resources/CUSTOM_WEBDRIVER/
