@@ -50,9 +50,11 @@ _src/test/resources/MainConfig.properties_
 	
 	
 ##### MOBULE EMULATION SETUP:  
-Goal: launch tests locally using mobile emulation
-Usage: pass ...-DmobileLocal=true...  param  
-To set the mobile device type update mobileEmulationDevice key in: _src/test/resources/MainConfig.properties_
+
+	Goal: launch tests locally using mobile emulation
+	Usage: pass ...-DmobileLocal=true...  param  
+	To set the mobile device type update mobileEmulationDevice key in:
+	 _src/test/resources/MainConfig.properties_
 
 
 		   
