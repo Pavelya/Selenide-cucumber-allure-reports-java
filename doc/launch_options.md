@@ -49,7 +49,7 @@ _src/test/resources/MainConfig.properties_
 	Should be replaced with actual BS account values 
 	
 	
-##### MOBULE EMULATION SETUP:  
+##### MOBILE EMULATION SETUP:  
 
 	Goal: launch tests locally using mobile emulation
 	Usage: pass ...-DmobileLocal=true...  param  
