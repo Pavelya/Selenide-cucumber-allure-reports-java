@@ -24,7 +24,7 @@
 		<slf4j.version>1.7.30</slf4j.version>
 		<allure-cucumber-jvm.version>2.13.5</allure-cucumber-jvm.version>
 		<owner-api.version>1.0.10</owner-api.version>
-		<junit.version>4.13</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<browser-stack-local.version>1.0.3</browser-stack-local.version>
 		<commons-io.version>2.6</commons-io.version>
 	</properties>
