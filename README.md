@@ -1,7 +1,6 @@
 # Selenide-cucumber-allure-reports-java
 [![License](https://img.shields.io/github/license/pavelya/Selenide-cucumber-allure-reports-java?style=for-the-badge)](https://github.com/Pavelya/Cypress-allure-reports-typescript)
 [![GitHub issues](https://img.shields.io/github/issues/pavelya/Selenide-cucumber-allure-reports-java?style=for-the-badge)](https://github.com/Pavelya/Cypress-allure-reports-typescript/issues)
-[![Commitizen-friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=appveyor)](https://github.com/commitizen/)
 
 Automation Testing using BrowserStack, Selenide API, Cucumber and Allure reports
 
