@@ -31,18 +31,15 @@ Running the tests - command line mode
 -------------------
 ```bash
 cd to project path   
-
-Run with BrowserStack  
-mvn clean install test -U -DuseBS=true -Denv=prod -Dbs_local=false -Ddevice=OS_X_Catalina_Safari "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"  
   
 Run locally with headless browser   
-mvn clean install test -U "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
+mvn clean install test -U "-Dcucumber.options=--tags @apify --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 Run locally with UI 
-mvn clean install test -U -Dheadless=false "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
+mvn clean install test -U -Dheadless=false "-Dcucumber.options=--tags @apify --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 Run locally with mobile emulaiton
-mvn clean install test -U -Dheadless=false -DmobileLocal=true "-Dcucumber.options=--tags @google --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
+mvn clean install test -U -Dheadless=false -DmobileLocal=true "-Dcucumber.options=--tags @apify --plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm" 
 
 ```
 Parameters usage
