@@ -7,7 +7,7 @@
 
 	<groupId>com.qa.automation</groupId>
 	<artifactId>test-automation</artifactId>
-	<version>2.5</version>
+	<version>2.5.1</version>
 
 	<name>test-automation</name>
 	<url>https://github.com/Pavelya/Selenide-cucumber-allure-reports-java</url>
@@ -26,7 +26,8 @@
 		<owner-api.version>1.0.10</owner-api.version>
 		<junit.version>4.13</junit.version>
 		<browser-stack-local.version>1.0.3</browser-stack-local.version>
-		<commons-io.version>2.6</commons-io.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<opencsv.version>5.3</opencsv.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -80,6 +81,11 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>${opencsv.version}</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>
